@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Inter:wght@400;500&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-card-border: var(--card-border);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+  
+  --font-heading: 'DM Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: #05070f;
+  --foreground: #f0f4ff;
+  --border: #1e3054;
+  --input: #1e3054;
+  --ring: #4f8ef7;
+
+  --card: #0e1a2e;
+  --card-foreground: #f0f4ff;
+  --card-border: #1e3054;
+
+  --primary: #4f8ef7;
+  --primary-foreground: #f0f4ff;
+
+  --secondary: #1e3054;
+  --secondary-foreground: #f0f4ff;
+
+  --muted: #0e1a2e;
+  --muted-foreground: #8a9bc2;
+
+  --accent: #4f8ef7;
+  --accent-foreground: #f0f4ff;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #f0f4ff;
+
+  --app-font-sans: 'Inter', sans-serif;
+  --app-font-serif: Georgia, serif;
+  --app-font-mono: Menlo, monospace;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #05070f;
+  --foreground: #f0f4ff;
+  --border: #1e3054;
+  --input: #1e3054;
+  --ring: #4f8ef7;
+
+  --card: #0e1a2e;
+  --card-foreground: #f0f4ff;
+  --card-border: #1e3054;
+
+  --primary: #4f8ef7;
+  --primary-foreground: #f0f4ff;
+
+  --secondary: #1e3054;
+  --secondary-foreground: #f0f4ff;
+
+  --muted: #0e1a2e;
+  --muted-foreground: #8a9bc2;
+
+  --accent: #4f8ef7;
+  --accent-foreground: #f0f4ff;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #f0f4ff;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-body antialiased bg-background text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(79, 142, 247, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(79, 142, 247, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(79, 142, 247, 0); }
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+.hover-glow:hover {
+  background-color: #6a9ffa; /* Lighten by ~15% */
+  box-shadow: 0 0 20px rgba(79, 142, 247, 0.6);
+}
+
+.glass-nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Intersection Observer utility class */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
