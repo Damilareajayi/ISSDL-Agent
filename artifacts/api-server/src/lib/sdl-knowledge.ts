@@ -187,4 +187,83 @@ The Self-Directed Learning Research Niche at NWU (Potchefstroom Campus):
 - Oddi, L.F. (1986). Development and validation of an instrument to identify self-directed continuing learners. *Adult Education Quarterly*, 36(2), 97–107.
 - Tough, A. (1971). *The Adult's Learning Projects*. Ontario Institute for Studies in Education.
 - Zimmerman, B.J. (2000). Attaining self-regulation: A social cognitive perspective. In Boekaerts, M., Pintrich, P. & Zeidner, M. (Eds.), *Handbook of Self-Regulation* (pp. 13–39). Academic Press.
+
+## 9. NWU Research Unit for Self-Directed Learning (Detailed)
+
+**Full name:** Research Unit Self-Directed Learning (SDL), Faculty of Education, North-West University, South Africa
+**Website:** https://education.nwu.ac.za/research-unit-self-directed-learning/home
+**Series ISSN (print):** 2707-1537
+
+### Vision
+"Promote self-directed learning that will lead to life-long learning in all education sectors through excellent research."
+
+### Mission
+- Conduct research on strategies and contexts that develop SDL skills for the 21st century and the Fourth Industrial Revolution (4IR).
+- Optimize quality and disseminate research outputs locally and internationally.
+- Support academic staff development and international recognition.
+- Provide quality postgraduate training in SDL across all education sectors.
+- Share knowledge through open licenses and public domain resources (Open Educational Resources / OER).
+- Conduct SDL research for community engagement.
+
+### Key Researchers
+- **Prof. Elsa Mentz** — Lead researcher; recipient of the Malcolm Knowles Self-Directed Learning Award (the field's most prestigious individual award) and the Education Association South Africa Medal of Honour. Co-editor of the AOSIS SDL book series. Research focus: SDL in higher education, cooperative learning and SDL, SDL and 4IR.
+- **Prof. Josef de Beer** — Co-lead of the unit and series. Research focus: SDL in science education, indigenous knowledge and SDL, decolonisation and curriculum.
+- **Dorothy Laubscher** — Research focus: OER, open educational practices, digital innovation and SDL.
+- **Jako Olivier** — Research focus: multimodal learning, open educational practices, SDL in language and humanities contexts.
+- **Charlene du Toit-Brits** — Research focus: SDL curriculum implementation, praxis, scholarship in context.
+- **Anitia Lubbe** — Research focus: assessment and SDL.
+- **Neal Petersen** — Research focus: work-integrated learning, intercultural competence, SDL.
+- **Christo van der Westhuizen** — Research focus: blended learning and SDL.
+- **Bernadette Geduld** — Research focus: metacognition, motivation, and SDL.
+- **Divan Jagals** — Research focus: metacognition and SDL.
+- **Roxanne Bailey** — Research focus: SDL research and educational practice.
+
+### UNESCO Chair
+The unit hosts a **UNESCO Chair on Multimodal Learning and Open Educational Resources (OER)**, recently approved by UNESCO. This positions the NWU SDL unit as a globally recognized center for open, flexible, and self-directed learning research.
+
+### Postgraduate Training
+The unit offers postgraduate studies (honours, master's, doctoral) in Education with specialization in SDL-related topics.
+
+### SDL Definition Used by the Unit
+The unit adopts Knowles' (1975) definition: "a process by which individuals take the initiative, with or without the help of others, in diagnosing their learning needs, formulating learning goals, identifying human and material resources for learning, choosing and implementing appropriate learning strategies, and evaluating learning outcomes."
+
+---
+
+## 10. AOSIS SDL Open Book Series (All 17 Volumes)
+
+All volumes are open access and published by AOSIS (African Online Scientific Information Systems). Available at: https://books.aosis.co.za/index.php/ob/catalog/series/sdl
+
+The series is edited primarily by Prof. Elsa Mentz and Prof. Josef de Beer at NWU. It is the most comprehensive dedicated SDL book series in the African and Global South context.
+
+| Vol. | Title | Editors | Year |
+|------|-------|---------|------|
+| 17 | Empowering self-directed learners through digital innovation and open educational practices | Dorothy Laubscher, Chantelle Bosch, Marry Mdakane | 2025 |
+| 16 | Self-directed entrepreneurial learning | Adri du Toit, Sukie van Zyl, Aubrey Golightly | 2025 |
+| 15 | Scaffolding work-integrated learning excursions: Enhancing intercultural competence, equity and inclusion | Adri du Toit, Neal Petersen, Iman C Chahine | 2024 |
+| 14 | Self-Directed Learning: Curriculum implementation, praxis and scholarship in context | Charlene du Toit-Brits, Jean Henry Blignaut, Elize Vos | 2024 |
+| 13 | Diverse educational contexts and research on metacognition and motivation to enhance self-directed learning | Bernadette Geduld, Byron J Bunt, Divan Jagals | 2024 |
+| 12 | Innovative curriculum design: Bridging the theory–practice divide in work-integrated learning to foster SDL | Neal Petersen, Adri du Toit, Elsa Mentz, Robert J Balfour | 2023 |
+| 11 | Problem-based learning and pedagogies of play: Active approaches towards SDL | Marietjie Havenga, Jako Olivier, Byron J Bunt | 2023 |
+| 10 | Contextualised open educational practices: Towards student agency and SDL | Jako Olivier, Charlene du Toit-Brits, Byron J Bunt, Amit Dhakulkar | 2022 |
+| 9 | SDL in the era of the COVID-19 pandemic: Research on the affordances of online virtual excursions | Josef de Beer, Neal Petersen, Elsa Mentz, Robert J Balfour | 2022 |
+| 8 | Blended learning environments to foster SDL | Christo van der Westhuizen, Mncedisi C Maphalala, Roxanne Bailey | 2022 |
+| 7 | Learning through assessment: An approach towards SDL | Elsa Mentz, Anitia Lubbe | 2021 |
+| 6 | SDL: An imperative for education in a complex society | Elsa Mentz, Dorothy Laubscher, Jako Olivier | 2021 |
+| 5 | Self-directed multimodal learning in higher education | Jako Olivier | 2020 |
+| 4 | Becoming a teacher: Research on the work-integrated learning of student teachers | Josef de Beer, Neal Petersen, Herman J van Vuuren | 2020 |
+| 3 | SDL research and its impact on educational practice | Elsa Mentz, Roxanne Bailey | 2020 |
+| 2 | The decolonisation of the curriculum project: The affordances of indigenous knowledge for SDL | Josef de Beer | 2019 |
+| 1 | SDL for the 21st century: Implications for higher education | Elsa Mentz, Josef de Beer, Roxanne Bailey | 2019 |
+
+### Key themes across the series
+- SDL and the Fourth Industrial Revolution (4IR)
+- SDL in work-integrated learning contexts
+- Cooperative learning as a vehicle for SDL
+- Metacognition and motivation as SDL enablers
+- OER and open educational practices fostering SDL
+- SDL in the COVID-19 and post-pandemic era
+- Indigenous knowledge and decolonised curriculum as SDL contexts
+- SDL in blended and multimodal environments
+- Assessment for SDL
+- SDL and entrepreneurial learning
 `.trim();
