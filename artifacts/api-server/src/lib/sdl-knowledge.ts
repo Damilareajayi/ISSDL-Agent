@@ -117,11 +117,17 @@ South Africa's post-apartheid higher education transformation has elevated SDL a
 - Distance education institutions (UNISA — the largest open distance learning institution in Africa) rely heavily on SDL principles.
 - North-West University (NWU) has been a leading research site for SDL theory and practice in South Africa.
 
-### 4.4 RECAST Lab — Florida State University
-Research Center for Education and African Studies (or equivalent SDL-focused research unit at FSU):
-- Focuses on SDL in cross-cultural and African educational contexts.
-- Conducts comparative studies of SDL readiness across cultural groups.
-- Partners with African institutions for collaborative research.
+### 4.4 RECAST — Florida State University
+**Full name:** Research & Exploration of Context-Aware Self-Teaching (RECAST)
+**Website:** https://recast.team/
+**Leader:** Dr. Bret Staudt Willet, Instructional Systems and Learning Technologies (ISLT) program, Florida State University
+
+RECAST takes its name from the D&D metaphor of recasting a D20 die — iterative trial-and-error, design-and-test cycles as the core of self-teaching. Key characteristics:
+- Focus on context-aware self-teaching: how learners figure things out by trying and trying again in specific contexts.
+- SDL is framed as fundamentally iterative — continuous cycles of attempt, reflection, and redesign.
+- Global network of contributors and collaborators.
+- Affiliated with the International Society for Self-Directed Learning (ISSDL / SDL Global).
+- Dr. Willet's research investigates how digital environments and informal contexts shape self-directed, self-taught learning.
 
 ### 4.5 SDL Lab — North-West University (NWU), South Africa
 The Self-Directed Learning Research Niche at NWU (Potchefstroom Campus):
@@ -266,4 +272,253 @@ The series is edited primarily by Prof. Elsa Mentz and Prof. Josef de Beer at NW
 - SDL in blended and multimodal environments
 - Assessment for SDL
 - SDL and entrepreneurial learning
+
+---
+
+## 11. Chapter-Level Tables of Contents — All 17 AOSIS SDL Volumes
+
+The following detailed chapter listings allow the agent to answer questions about specific chapters, topics, and authors within each volume. All books are open access at https://books.aosis.co.za/index.php/ob/catalog/series/sdl
+
+### Volume 1 (2019): Self-Directed Learning for the 21st Century: Implications for Higher Education
+Editors: Elsa Mentz, Josef de Beer, Roxanne Bailey
+1. Self-directed learning: A conceptual overview — Chantelle Bosch, Elsa Mentz, Roelien Goede
+2. The impact of cooperative learning on self-directed learning — David W Johnson, Roger T Johnson
+3. Moving to deeper self-directed learning as an essential competency for the 21st century — Sukie van Zyl, Elsa Mentz
+4. The importance of context for self-directed learning — Josef de Beer
+5. In pursuit of accomplished teacher development through praxis in a South African distance learning programme — Corné Kruger
+6. Towards a multiliteracies framework in support of SDL through open educational resources — Jako Olivier
+7. A systematic review of research on technology-supported cooperative learning to enhance SDL — Elsa Mentz, Roxanne Bailey
+8. A teaching–learning framework for adaptive instruction using cooperative learning and Socratic questioning to promote SDL — Dorothy Laubscher, Roxanne Bailey, Per B Bergamin, Christo van der Westhuizen
+9. Developing SDL skills of geography student teachers through online problem-based learning — Christo van der Westhuizen, Aubrey Golightly
+10. Constructive congruencies in SDL and entrepreneurship education — Adri du Toit
+11. Participative assessment practices and its contribution to the development of SDL skills — Anitia Lubbe, Elsa Mentz
+
+### Volume 2 (2019): The Decolonisation of the Curriculum Project: The Affordances of Indigenous Knowledge for SDL
+Editor: Josef de Beer
+1. Glocalisation: The role of indigenous knowledge in the global village — Josef de Beer
+2. Different voices on decolonising of the curriculum — Lesley le Grange
+3. The use of Cultural-Historical Activity Theory in researching the affordances of indigenous knowledge for SDL — Elsa Mentz, Josef de Beer
+4. The affordances of indigenous knowledge in decolonising the curriculum within an SDL framework — Josef de Beer, Elsa Mentz
+5. Arguing for the inclusion of indigenous knowledge in the STEM curriculum — Josef de Beer, Ben-Erik van Wyk
+6. Engaging pedagogies to facilitate border-crossing between natural sciences and indigenous knowledge — Neal Petersen, Aubrey Golightly, Washington T Dudu
+7. The affordances of indigenous knowledge in mathematics education — Marthie van der Walt, Erika Potgieter, Divan Jagals
+8. Engaging in indigenous technology: Conceptualisation and contextualisation in problem-based environments — Marietjie Havenga
+9. The use of puppetry as pedagogy to teach indigenous knowledge — Lounell White, Susan Bester, Tswakae Sebotsa
+10. The affordances of technology for teaching indigenous knowledge — Jako Olivier, Christo van der Westhuizen, Dorothy Laubscher, Roxanne Bailey
+11. Indigenous knowledge research ethics — Melissa Speight Vaughn, Marry Mdakane
+
+### Volume 3 (2020): Self-Directed Learning Research and Its Impact on Educational Practice
+Editors: Elsa Mentz, Roxanne Bailey
+1. Defining research focus in SDL: An autoethnographic reflection — Divan Jagals
+2. Evaluating undergraduate students' SDL experiences during research-based learning — Walter Uys, Wallace Chigona
+3. Implementing guidelines for deeper SDL in Computer Applications Technology education — Sukie van Zyl, Elsa Mentz
+4. Lessons learnt in establishing a teaching presence in a cooperative blended learning environment — Chantelle Bosch, Dorothy Laubscher
+5. Puzzle video games and the benefits for critical thinking: Developing skills towards SDL — Byron J Bunt, Mary Grosser
+6. Teachers' position regarding their curriculum as praxis: An SDL capability perspective — Marisa Verster, Elsa Mentz, Charlene du Toit-Brits
+7. A Cultural-Historical Activity Theory gaze at teacher professional development to enhance SDL — Elsa Mentz, Josef de Beer
+8. Facilitator experiences on implementing technology-supported cooperative learning professional development — Gordon Sekano, Dorothy Laubscher, Roxanne Bailey
+9. Using cooperative learning as scaffold to develop Grade 10 Life Sciences learners' SDL skills — Monica de Lange, Neal Petersen, Betty Breed
+10. A contextual consideration of parental involvement in homework to develop self-regulated learning — Bernadette Geduld, Marry Mdakane
+
+### Volume 4 (2020): Becoming a Teacher: Research on the Work-Integrated Learning of Student Teachers
+Editors: Josef de Beer, Neal Petersen, Herman J van Vuuren
+1. The journey of becoming a professional teacher: Policy directives and current practices — Herman J van Vuuren
+2. TeachLivE™: Learning from practice in a mixed-reality teaching environment — Carisma Nel, Elma Marais, Lisa Dieker
+3. The value of work-integrated learning for professional teacher development in open distance learning — Divan Jagals
+4. Work-integrated learning and teaching schools: The UJ teaching school experience — Sarita Ramsaroop, Nadine Petersen, Sarah Gravett
+5. The first-year student teacher as a self-directed learner — Neal Petersen, Josef de Beer, Elsa Mentz
+6. Self-directed learning in teacher education: Lessons from Finland — Elsa Mentz, Josef de Beer
+7. The affordances of case-based teaching that draws on drama in pre-service teacher education — Josef de Beer, Marthie van der Walt, Byron Bunt
+8. 'WIL goes POP': The role of a professional orientation programme in addressing the apprenticeship of observation — Carolina Botha, Elizabeth M Reyneke
+9. The role of reflection as a vehicle for SDL during work-integrated learning of student teachers — Juliet Rens, Lounell White, Lettie Botha
+10. The role of WIL excursions in preparing student teachers for diverse classrooms and social justice — Tswakae Sebotsa, Neal Petersen, Melissa Speight Vaughn
+11. A hybrid model building on prolepsis for effective practice teaching in pre-service life sciences teacher education — Josef de Beer, Sarah Gravett
+12. An alternative model for work-integrated learning in South African schools — Izak Oosthuizen, Lloyd Conley, Carolina Botha
+
+### Volume 5 (2020): Self-Directed Multimodal Learning in Higher Education
+Editor: Jako Olivier
+1. Self-directed multimodal learning within a context of transformative open education — Jako Olivier
+2. The affordances of the Community of Inquiry framework for SDL blended learning — Chantelle Bosch, Dorothy Laubscher, Jako Olivier
+3. Adaptive learning technology to enhance SDL — Donnavan Kruger
+4. A systematic literature review to probe design guidelines for a SDL blended learning environment — Dorothy Laubscher, Chantelle Bosch
+5. Diffractive pathways in self-directed multimodal learning: Experiences from Botswana and South Africa — Mmabaledi Seeletso, Jako Olivier
+6. Implementing cooperative learning elements in Google Docs to optimise online social presence in an SDL environment — Christo van der Westhuizen, Elsa Mentz
+7. Situated and culturally appropriate self-directed multimodal learning — Jako Olivier
+8. Scaffolding teachers' critical reflection in a South African distance learning programme — Corné Kruger
+9. Optimising the Community of Inquiry principles of online SDL environments — Christo van der Westhuizen
+10. Blending and cooperating in the computer literacy classroom: An opportunity to develop SDL skills — Roxanne Bailey, Elsie Lubbe
+
+### Volume 6 (2021): Self-Directed Learning: An Imperative for Education in a Complex Society
+Editors: Elsa Mentz, Dorothy Laubscher, Jako Olivier
+1. The promotion of SDL through the African philosophy of Ubuntu — Charlene du Toit-Brits, Henry Blignaut, Maureen Kapute Mzuza
+2. The influence of the learning environment on promoting SDL — Charlene du Toit-Brits
+3. Diluted self-directed multimodal learning guidelines: Probing online study advice in the context of panic pedagogy — Jako Olivier
+4. Exploring microworlds as supporting environments for self-directed multimodal learning — Amit Dhakulkar, Jako Olivier
+5. Identifying adaptive prompts to facilitate metacognitive regulation during online learning — Divan Jagals, Per Bergamin
+6. Knowledge surveys: Supporting students along pathways to SDL with self-assessment — Karl R Wirth, Edward B Nuhfer, Rachel Watson, Steven C Fleisher, Roxanne Bailey
+7. Self-directed learning: A sine qua non in in-service teacher education — Tswakae Sebotsa, Josef de Beer, Jeanne Kriek
+8. Exploring collaboration as a 21st-century skill to enhance SDL through problem-based learning — Motlhale J Sebatana, Washington T Dudu
+9. Assessing pre-service mathematics teachers' problem-solving proficiency: An imperative for SDL — Sfiso C Mahlaba
+10. Being, becoming, and belonging: The ethnosemantic structure of folk arithmetic of street vendors as SDL — Iman C Chahine
+
+### Volume 7 (2021): Learning Through Assessment: An Approach Towards Self-Directed Learning
+Editors: Elsa Mentz, Anitia Lubbe
+1. SDL-oriented assessment and assessment literacy: Essential for 21st-century learning — Anitia Lubbe, Elsa Mentz
+2. Assessing axiologolects: Exploring the language of situated SDL-oriented assessment — Jako Olivier
+3. Self-directed multimodal assessment: Towards assessing in a more equitable and differentiated way — Jako Olivier
+4. Aligning metaliteracy with SDL to expand assessment opportunities — Trudi E Jacobson, Thomas P Mackey, Jako Olivier
+5. Leveraging student SDL through online tutoring and integrated ipsative assessment — Iman C Chahine, Saeid Belkasim
+6. Assessment as an epistemological tool to facilitate metacognitive awareness and promote SDL — Divan Jagals
+7. Value of feedback during the implementation of the group–individual–group cooperative learning method — Elsa Mentz, Anitia Lubbe
+8. Assessment: The driving force behind SDL in English teacher training — Marike Annandale, Elizabeth M Reyneke
+9. Using digital technology as formative assessments to enhance SDL — Byron J Bunt, Gideon van Tonder
+10. The role of teachers' assessment beliefs in fostering SDL skills and its implications for higher education — Effiness Kamanga, Josef de Beer, Anitia Lubbe
+
+### Volume 8 (2022): Blended Learning Environments to Foster Self-Directed Learning
+Editors: Christo van der Westhuizen, Mncedisi C Maphalala, Roxanne Bailey
+1. A 21st-century vision for SDL in blended learning environments — Christo van der Westhuizen, Roxanne Bailey
+2. Curiosity killed the cat, but satisfaction brought it back: Inquiry-based learning in blended environments — Donnavan Kruger, Egon Werlen, Per B Bergamin
+3. Pair problem-solving, flipped classroom and metacognitive self-questioning to enhance SDL — Roxanne Bailey, Betty Breed
+4. Self-directed learning with technology for fourth-year Engineering Graphics and Design students — Albert Kemp, Christo van der Westhuizen
+5. Blended learning as a catalyst for SDL in universities amid COVID-19: Fourth-year students' experiences — Mncedisi C Maphalala, Sfiso C Mahlaba
+6. A flipped classroom approach to mathematics teacher training: Blended learning in support of metacognition as SDL — Celizma Lotz, Corné Kruger, Jako Olivier
+7. Academic flexibility to implement ICT in using blended learning: Post-COVID-19 era — Joyce P Dhlamini
+8. Self-directed language learning in a blended environment: Perspectives of Sesotho sa Leboa and isiZulu student-teachers — Jako Olivier, Matome M Mabiletja, Emmanuel Ngwenya
+9. Self-control tasks with self-explanation prompts as a component of self-directed online learning — Egon Werlen, Victoria Mirata, Divan Jagals, Nicole Bergamin
+10. Blended gamification: Using Habitica to develop the SDL capabilities of BEd students — Byron J Bunt, Nicolaas van Deventer
+
+### Volume 9 (2022): SDL in the Era of the COVID-19 Pandemic: Research on the Affordances of Online Virtual Excursions
+Editors: Josef de Beer, Neal Petersen, Elsa Mentz, Robert J Balfour
+1. Cresting the wave: COVID-19's impact on reconceptualising higher education professional development — Robert J Balfour
+2. Rhizomic development of the student excursion across three faculties in a multi-campus university — Yolani Geldenhuys, Josef de Beer
+3. The affordances of face-to-face student excursions and implications for migration to virtual excursions — Josef de Beer, Neal Petersen
+4. Developing capacity on several levels: Scaffolding learning, leadership development, and service-learning — Elize Küng, Lloyd Conley, Lounell White
+5. First-year students' conceptions of the complexity of the profession, sense of belonging, and SDL — Neal Petersen, Elsa Mentz, Josef de Beer
+6. Exploring virtual excursions for SDL: A systematic literature review — Jako Olivier, Nothile AT Kunene
+7. Problem-based learning in a virtual space: Affordances of active online learning — Marietjie Havenga, Adri du Toit
+8. Students' experiences of cooperative learning in a virtual excursion — Anitia Lubbe, Neal Petersen
+9. Gamification and addressing social justice and inclusivity through the 'Famine and Abundance' game — Byron J Bunt, Josef de Beer, Neal Petersen
+10. Assessment of virtual excursions: Posters as self-directed multimodal assessment instruments — Anitia Lubbe, Jako Olivier, Anette Hay
+11. 'Withitness' in the virtual learning space: Reflections of student teachers and teacher educators — Josef de Beer, Neal Petersen, Lloyd Conley
+12. Design principles for a virtual excursion for law students — René Koraan, Getzia R Zazo, Ninette Crous, Celia Lourens
+13. Design thinking in developing a virtual WIL experience for health sciences students — Gerda Reitsma et al.
+
+### Volume 10 (2022): Contextualised Open Educational Practices: Towards Student Agency and SDL
+Editors: Jako Olivier, Charlene du Toit-Brits, Byron J Bunt, Amit Dhakulkar
+1. Open educational practices for SDL: A staff fellowship as a case study — Jako Olivier, Byron J Bunt, Amit Dhakulkar
+2. Digital multilingualism for social justice through localised self-directed open education — Jako Olivier, Louise Olivier
+3. Open educational resources' likely contributions to education and implications for SDL — Cornelie Nienaber-Rousseau, Charlene du Toit-Brits
+4. Multilingual philosophy glossaries: Steps towards socially just pedagogical praxis — Yolandi M Coetser, Chantelle Gray, Aïda Terblanché-Greeff, Nolwandle Lembethe
+5. Designing an OER to support the development of oral interactional competence at beginner level — Carina Grobler, Juan Steyn
+6. Decolonising the journalism curriculum through co-creating an open educational textbook with students — Andre Gouws
+7. Stories students tell about their learning experiences creating OER in a music education module — Mignon van Vreden
+8. Second-year health students' perspectives on developing open educational resources — Yolande Heymans et al.
+9. An OER as a tool to create awareness around infectious diseases — Chandré Liebenberg et al.
+10. How open educational resources can assist in developing open legal pedagogies — Kabelo Mutubi
+
+### Volume 11 (2023): Problem-Based Learning and Pedagogies of Play: Active Approaches Towards SDL
+Editors: Marietjie Havenga, Jako Olivier, Byron J Bunt
+1. Problem-based learning: A 21st-century teaching and learning strategy — Aubrey Golightly, Motlhale J Sebatana
+2. Pedagogy of play: A framework for SDL — Byron J Bunt
+3. Designing interactive pedagogies of play through metaliteracy — Trudi E Jacobson, Thomas P Mackey
+4. Joyful learning: Advocating for SDL through authentic, playful problem-based learning — Henry Blignaut, Ewie Erasmus, Charlene du Toit-Brits
+5. Mathematics education students' development of computational thinking through game-based tasks — Marietjie Havenga, Tertia Jordaan
+6. Introduction to computational thinking in geometry through a LOGO problem-based learning experience — Azeddine Benelrhali et al.
+7. A gamification approach to linear equations through creating and solving puzzles in a collaborative environment — Amit Dhakulkar, Jako Olivier, Byron J Bunt
+8. LEGO-ing in the development of teacher identity — Maryna Reyneke, Elma Marais, Carolina Botha
+9. Impact of drama-based pedagogy on SDL skills and motivation in Grade 12 English learners — Chanene Nordgaard, Maryna Reyneke, Louise Olivier
+10. Educational robotics for playful problem-based learning using Cultural-Historical Activity Theory — Marietjie Havenga, Olukayode S Aboderin
+
+### Volume 12 (2023): Innovative Curriculum Design: Bridging the Theory–Practice Divide in WIL to Foster SDL
+Editors: Neal Petersen, Adri du Toit, Elsa Mentz, Robert J Balfour
+1. Reimagining work-integrated learning excursions to decrease the theory–practice divide — Adri du Toit, Neal Petersen
+2. Immersion pedagogy on the Vygotskyan stage: The affordances of role immersion during the first-year student excursion — Josef de Beer
+3. Affordances and barriers of face-to-face and virtual online excursions to foster SDL: Distilling design principles — Neal Petersen, Elsa Mentz, Josef de Beer
+4. Students' experiences of game-based learning to foster SDL — Byron J Bunt, Lounell White, Neal Petersen
+5. Exploring strategies to foster first-year students' critical reflection towards social justice praxis in WIL — Corné CG Kruger, Marry Mdakane
+6. Entrepreneurial learning as curriculum innovation toward bridging the theory–practice divide — Adri du Toit
+7. Self-directed multimodal assessment of virtual excursions: Affordances for student agency — Anitia Lubbe
+8. Demystifying intercultural constructs in a South African context: Virtual excursions as curriculum innovations — Iman C Chahine, Awad Awad
+9. Pedagogy of play in a virtual excursion to foster SDL in health care students — Jessica Pool, Yolande Heymans, Rhea Koch, Gontse Mokwatsi
+10. Work-integrated learning and SDL: Design, skills and dispositions for professional development — Robert J Balfour
+
+### Volume 13 (2024): Diverse Educational Contexts and Research on Metacognition and Motivation to Enhance SDL
+Editors: Bernadette Geduld, Byron J Bunt, Divan Jagals
+1. Metacognition: The cognitive-affective architecture of SDL — Divan Jagals
+2. The Thinking Hats teaching strategy: Potential benefits to advance metacognitive SDL — Gideon Petrus van Tonder, Mary M Grosser, Nicolaas van Deventer, Byron J Bunt
+3. Mathematical noticing in pre-service teacher education: Affordances for metacognition — Annalie Roux, Magda Kloppers
+4. Metacognitive reflection based on history game genres to develop SDL — Byron J Bunt, Lance R Bunt, Michael Stack
+5. Modelling metacognitive monitoring skills and self-regulated learning: Teacher experiences in secondary schools — Vanishree Ragvan, Bernadette Geduld
+6. Exploring metacognition and motivation in classroom environments for successful learning in accounting — Alviné Petzer
+7. Problem-centred mathematics learning in Grade 2: Enhancing metacognitive thinking — Lineke Potgieter, Corné Kruger, Dorothy Laubscher, Byron J Bunt
+8. Grade 7 mathematics learners' metacognitive thinking in problem-based tasks — Sylvia Kashango, Marietjie Havenga, Tertia Jordaan
+9. Developing learners' algebraic thinking through metacognitive strategies and mathematical language — Mariliza Pieters, Annalie Roux, Tertia Jordaan
+10. Proposing a model for analysing the relationship between metacognitive awareness and worldview as mediating constructs of SDL — Christine-Marie van der Westhuizen, Divan Jagals, Marisa Verster
+
+### Volume 14 (2024): Self-Directed Learning: Curriculum Implementation, Praxis and Scholarship in Context
+Editors: Charlene du Toit-Brits, Jean Henry Blignaut, Elize Vos
+1. Self-directed learning praxis and poiesis in the age of artificial intelligence — Jako Olivier
+2. Cultivating self-authorship through SDL environments — Charlene du Toit-Brits, Jean Henry Blignaut, Karl R Wirth
+3. Unveiling the catalyst: Exploring learner and educator SDL attributes as a mechanism to attain curriculum and pedagogical objectives — Charlene du Toit-Brits, Sipho Mahlaba, Christo P van der Westhuizen
+4. Bridging the gap: Nurturing self-directedness in higher education teacher training and teachers' job demands — Gideon P van Tonder, Nicolaas van Deventer
+5. Improving academic success: Cultivating SDL to address procrastination in higher distance education — Christof Imhof, Ioan-Sorin Comsa, Dorothy Laubscher, Tobias Häberlein, Per Bergamin
+6. Continuous professional development through SDL among lecturers in curriculum transformation — Jackie Slabbert-Redpath, Josef de Beer, Charlene du Toit-Brits
+7. Towards a student-centred curriculum: The case of cooperative learning-embedded assessment — Anitia Lubbe, Elsa Mentz
+8. Introducing block-based programming: Pre-service teachers' skill development and self-efficacy in digital microworlds — Marietjie Havenga, Olukayode S Aboderin
+9. From classroom to home: Unleashing the power of SDL in homeschooling — Marguerite Scheepers, Jean Henry Blignaut, Charlene du Toit-Brits
+10. Enhancing SDL: Integrating the Rationality Index of Plant Use and scientific principles in pre-service Chemistry teachers' training — Motlhale J Sebatana, Eunice Pretorius, Washington T Dudu, Josef de Beer
+
+### Volume 15 (2024): Scaffolding Work-Integrated Learning Excursions: Enhancing Intercultural Competence, Equity and Inclusion
+Editors: Adri du Toit, Neal Petersen, Iman C Chahine
+1. Cultural agility: Equipping HEI students for diversity and inclusion through WIL excursions — Corlia Twine, Johan Botha
+2. Variations in intercultural sensitivity of pre-service teachers after immersion in a WIL excursion — Iman C Chahine
+3. Breaking barriers: Educational excursions fostering first-year student teachers' sense of belonging — Neal Petersen
+4. Determining challenges pre-service teachers face per their reflective thinking after a face-to-face excursion — Ann Haley MacKenzie
+5. Students' confidence in using intercultural communication in WIL excursions — Gordon Keabetswe Sekano, Mmankoko Ziphorah Ramorola
+6. WIL excursions equipping Foundation Phase student teachers to value and accommodate diversity — Pateka Pamella Jama, Rachel Rirhandzu Mayimele
+7. First-year student teachers' perceptions of diversity and inclusivity in entrepreneurial learning — Adri du Toit, Hendrik du Plessis
+8. Facilitators as co-creators of equity and inclusivity in online WIL excursions — Adri du Toit, Annerie Kruger
+9. Using virtual excursions to foster intercultural competence of undergraduate health care students — Jessica Pool, Yolande Heymans, Rhea Koch, Gontse G Mokwatsi
+10. Promoting inclusive classroom practices: A teacher educator's experience — Annah Ndlovu Nkomo
+
+### Volume 16 (2025): Self-Directed Entrepreneurial Learning
+Editors: Adri du Toit, Sukie van Zyl, Aubrey Golightly
+1. Problem-based entrepreneurial learning towards self-directed entrepreneurial learning — Danél Kruger, Aubrey Golightly
+2. Student readiness for adopting SDL in entrepreneurship programmes — Thea Tselepis, Chris Schachtebeck, Cecile Nieuwenhuizen
+3. Self-directed teacher empowerment: Integrating entrepreneurial learning into Technology education — Faren McCarthy-Kettledas, Adri du Toit, Gideon P van Tonder
+4. Cooperative learning to enhance SDL and entrepreneurial skills in financial literacy — Viné Petzer, Sukie van Zyl
+5. Enhancing entrepreneurial skills through practice-oriented learning tasks integrated in cooperative learning — Christelle Kruger, Elsa Mentz, Elsie Lubbe
+6. Productive failure in Coding and Robotics: Fostering SDL and entrepreneurial learning — Sukie van Zyl, Fotiene Avrakotos-King, Francois Papers
+7. Incorporating entrepreneurial learning into Life Orientation's well-being framework — Adri du Toit
+8. Developing entrepreneurial mindsets through an arts-based playful project-based learning workshop — Merna Meyer, Ewie Erasmus, Linda Hesse
+
+### Volume 17 (2025): Empowering Self-Directed Learners Through Digital Innovation and Open Educational Practices
+Editors: Dorothy Laubscher, Chantelle Bosch, Marry Mdakane
+1. Framing SDL through open educational practices and digital innovation — Dorothy Laubscher, Chantelle Bosch, Marry Mdakane
+2. Open educational practices in the era of the Fourth Industrial Revolution: Empowering SDL — Dorothy Laubscher, Byron John Bunt, Jane Yau
+3. Exploring SDL through co-creation: Postgraduate students' experiences in an open textbook project — Chantelle Bosch, Lezeth van der Walt, Obakeng Molokwane, Nhlanhla Mbele
+4. Open play, open minds: Leveraging 'Prosper' as an OER for global citizenship and sustainable development — Byron John Bunt, Lance Bunt
+5. Customised SDL Navigator: Utilising multiple mobile applications to develop, monitor and assess SDL — James Sibanda, Christo Johannes Els, Marry Mdakane, Dorothy Laubscher
+6. Integrating robotics in Engineering Graphics and Design to scaffold Technology Education students' skill development — Albert Kemp, Marietjie Havenga
+7. The role of the teacher in promoting SDL within the blended learning platform of Alef in Abu Dhabi — Maria Magdalena Botha, Dorothy Laubscher, Chantelle Bosch
+8. The role of educators in evaluating ICTs to foster SDL — Frans Sipho Mahlaba, Christo P van der Westhuizen, Charlene du Toit-Brits
+9. Digital technologies in Engineering Graphics and Design to promote education students' skill development — Pieter van den Berg, Marietjie Havenga, Albert Kemp
+10. Experiences with speech input in open questions: A digital innovation to foster SDL — Egon Werlen, Dorothy Laubscher
+
+---
+
+## 12. Access Limitations and Capabilities
+
+**What this agent can answer from the AOSIS SDL series:**
+- Titles, editors, publication years, and ISBNs for all 17 volumes
+- Chapter titles, chapter authors, and chapter numbers for all 17 volumes
+- Thematic content of chapters based on their titles
+- Cross-volume patterns, recurring authors, and research themes
+
+**What requires direct access to the full PDF text:**
+- Verbatim quotations from specific pages
+- Detailed methodology sections, statistical results, or specific findings
+- Page-level references within chapters
+
+All 17 volumes are freely downloadable as open access PDFs from https://books.aosis.co.za/index.php/ob/catalog/series/sdl — the agent can direct users there for full text. The NWU SDL Research Unit and RECAST (Florida State University) are key institutional homes for this research community.
 `.trim();
