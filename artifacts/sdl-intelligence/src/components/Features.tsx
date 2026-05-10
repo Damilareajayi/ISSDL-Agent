@@ -1,96 +1,490 @@
-import { useEffect, useRef } from "react";
-import { MessageSquare, TrendingUp, Compass, Globe, Calendar, CheckSquare } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { MessageSquare, TrendingUp, Compass, Globe, Calendar, CheckSquare, X, ExternalLink } from "lucide-react";
+
+// ─── Framework Navigator content ────────────────────────────────────────────
+
+const FRAMEWORKS = [
+  {
+    name: "Knowles' Andragogy",
+    year: "1975",
+    summary: "Six core assumptions about adult learners that underpin SDL.",
+    points: [
+      "Self-concept: Adults move from dependency toward self-directedness as they mature.",
+      "Experience: Adults accumulate experience that becomes a rich resource for learning.",
+      "Readiness: Adults become ready to learn things needed to cope with real-life situations.",
+      "Orientation: Adults are life- and problem-centered, not subject-centered.",
+      "Motivation: Adults are primarily internally motivated.",
+      "Need to know: Adults need to know why they need to learn something before learning it.",
+    ],
+  },
+  {
+    name: "Garrison's 3D Model",
+    year: "1997",
+    summary: "Three interactive dimensions of SDL on a continuum.",
+    points: [
+      "Self-Management (external): Learner control over the instructional process, task management, and use of resources.",
+      "Self-Monitoring (internal): Metacognitive awareness — monitoring and evaluating one's own learning strategies.",
+      "Motivation: Entering motivation initiates the process; task motivation sustains it.",
+      "Key insight: True SDL integrates all three dimensions; weakness in any one undermines the others.",
+    ],
+  },
+  {
+    name: "Candy's Constructivist Model",
+    year: "1991",
+    summary: "SDL as four related but distinct phenomena.",
+    points: [
+      "Personal autonomy as a goal of education.",
+      "Self-management of the learning process.",
+      "Learner control of instruction within formal settings.",
+      "Autodidaxy: self-teaching outside formal settings.",
+      "Key insight: SDL competence is domain-specific — a person may be self-directed in one field and dependent in another.",
+    ],
+  },
+  {
+    name: "Zimmerman's Self-Regulation",
+    year: "2000",
+    summary: "Social-cognitive framework closely related to SDL.",
+    points: [
+      "Forethought Phase: Goal setting, strategic planning, self-efficacy beliefs, intrinsic motivation.",
+      "Performance Phase: Self-instruction, attention focusing, task strategies, self-monitoring.",
+      "Self-Reflection Phase: Self-judgment, attributions, self-evaluation, adaptation.",
+    ],
+  },
+  {
+    name: "PRO Model (Brockett & Hiemstra)",
+    year: "1991",
+    summary: "Personal Responsibility Orientation to SDL.",
+    points: [
+      "SDL is both a teaching-learning process AND a personality characteristic.",
+      "Self-direction in learning is grounded in personal responsibility.",
+      "Linked to humanistic philosophy — the learner has agency and moral accountability for their own growth.",
+    ],
+  },
+];
+
+// ─── Global Labs content ─────────────────────────────────────────────────────
+
+const LABS = [
+  {
+    name: "NWU SDL Research Unit",
+    location: "Potchefstroom, South Africa",
+    lead: "Prof. Elsa Mentz, Prof. Josef de Beer",
+    focus: "SDL in African and Global South HE, cooperative learning, OER, 4IR, metacognition.",
+    url: "https://education.nwu.ac.za/research-unit-self-directed-learning/home",
+    highlight: "Malcolm Knowles SDL Award recipient · UNESCO Chair on Multimodal Learning & OER · Editors of the 17-volume AOSIS SDL series",
+  },
+  {
+    name: "RECAST Lab — FSU",
+    location: "Florida State University, USA",
+    lead: "Dr. Bret Staudt Willet",
+    focus: "Research & Exploration of Context-Aware Self-Teaching. Iterative, context-sensitive SDL methodology.",
+    url: "https://recast.team/",
+    highlight: "Affiliated with ISSDL · D&D-inspired iterative design-and-test approach to SDL",
+  },
+  {
+    name: "ISSDL — International Society for SDL",
+    location: "Global (USA-based)",
+    lead: "Rotating leadership",
+    focus: "Annual SDL symposium, Malcolm Knowles Award, global SDL research network.",
+    url: "https://www.sdlglobal.com/",
+    highlight: "Hosts the annual International Symposium on SDL · Publishes the International Journal of SDL",
+  },
+  {
+    name: "Florida Atlantic University",
+    location: "Boca Raton, USA",
+    lead: "Lucy Guglielmino (emerita)",
+    focus: "Developer of the SDLRS — the most widely used SDL measurement instrument (500+ published studies).",
+    url: null,
+    highlight: "SDLRS now in 29 languages · Foundation of SDL measurement research",
+  },
+  {
+    name: "University of Tennessee",
+    location: "Knoxville, USA",
+    lead: "Ralph Brockett (emeritus)",
+    focus: "PRO model of SDL, SDL philosophy, ethics of self-directed learning.",
+    url: null,
+    highlight: "Co-authored foundational PRO model text (Brockett & Hiemstra, 1991)",
+  },
+];
+
+// ─── Events content ──────────────────────────────────────────────────────────
+
+const EVENTS = [
+  {
+    name: "International Symposium on SDL",
+    org: "ISSDL / SDL Global",
+    cadence: "Annual (typically February, Florida, USA)",
+    description: "The flagship global SDL event, running since 1986. Scholars, practitioners, and students present SDL research and debate theoretical developments.",
+    url: "https://www.sdlglobal.com/",
+  },
+  {
+    name: "Malcolm S. Knowles SDL Award",
+    org: "ISSDL",
+    cadence: "Awarded annually at the symposium",
+    description: "The field's most prestigious individual award, given to a researcher who has made outstanding contributions to SDL theory and practice. Prof. Elsa Mentz (NWU) is a recipient.",
+    url: null,
+  },
+  {
+    name: "NWU SDL Conferences & Workshops",
+    org: "NWU Research Unit SDL",
+    cadence: "Periodic (check NWU education faculty website)",
+    description: "The NWU SDL Research Unit hosts thematic conferences and postgraduate writing retreats focused on SDL in South African and African higher education contexts.",
+    url: "https://education.nwu.ac.za/research-unit-self-directed-learning/home",
+  },
+  {
+    name: "AOSIS SDL Book Series — Open Calls",
+    org: "AOSIS Publishing / NWU SDL Unit",
+    cadence: "Ongoing — new volumes added periodically",
+    description: "17 volumes published (2019–2025). Authors interested in contributing to future volumes should contact the NWU SDL Research Unit. All volumes are open access.",
+    url: "https://books.aosis.co.za/index.php/ob/catalog/series/sdl",
+  },
+];
+
+// ─── Self-Assessment ─────────────────────────────────────────────────────────
+
+const QUESTIONS = [
+  { dimension: "Initiative", text: "I actively seek out learning opportunities without being told to." },
+  { dimension: "Goal-Setting", text: "I set clear, specific goals for what I want to learn." },
+  { dimension: "Self-Monitoring", text: "I regularly reflect on whether my learning strategies are working." },
+  { dimension: "Responsibility", text: "I take full responsibility for my own learning successes and failures." },
+  { dimension: "Resource Use", text: "I confidently identify and use a variety of resources to learn something new." },
+  { dimension: "Motivation", text: "I am internally motivated to learn even when no one is grading me." },
+];
+
+const SCORE_LABELS = [
+  { min: 6, max: 12, level: "Dependent Learner", color: "text-red-400", detail: "You rely heavily on others to direct your learning. Consider building habits around goal-setting and self-reflection." },
+  { min: 13, max: 20, level: "Interested Learner", color: "text-yellow-400", detail: "You have some SDL habits but still need external structure. Focus on developing initiative and monitoring your own progress." },
+  { min: 21, max: 26, level: "Involved Learner", color: "text-blue-400", detail: "You demonstrate solid SDL skills. With practice you can become more consistent in all dimensions." },
+  { min: 27, max: 30, level: "Self-Directed Learner", color: "text-emerald-400", detail: "You show strong SDL readiness across all dimensions. You actively drive your own learning — keep building on it." },
+];
+
+function SelfAssessmentPanel() {
+  const [answers, setAnswers] = useState<Record<number, number>>({});
+  const [submitted, setSubmitted] = useState(false);
+
+  const allAnswered = QUESTIONS.every((_, i) => answers[i] !== undefined);
+  const total = Object.values(answers).reduce((s, v) => s + v, 0);
+  const result = submitted ? SCORE_LABELS.find((l) => total >= l.min && total <= l.max) : null;
+
+  return (
+    <div className="space-y-6">
+      <p className="text-[#8a9bc2] text-sm">
+        Rate each statement 1 (strongly disagree) → 5 (strongly agree). Based on the Self-Directed Learning Readiness Scale (SDLRS) dimensions.
+      </p>
+
+      {QUESTIONS.map((q, i) => (
+        <div key={i} className="space-y-2">
+          <p className="text-[#f0f4ff] text-sm">
+            <span className="text-[#4f8ef7] text-xs font-semibold uppercase tracking-wide mr-2">{q.dimension}</span>
+            {q.text}
+          </p>
+          <div className="flex gap-2">
+            {[1, 2, 3, 4, 5].map((v) => (
+              <button
+                key={v}
+                onClick={() => { setAnswers((a) => ({ ...a, [i]: v })); setSubmitted(false); }}
+                className={`w-10 h-10 rounded-lg border text-sm font-semibold transition-all ${
+                  answers[i] === v
+                    ? "bg-[#4f8ef7] border-[#4f8ef7] text-white"
+                    : "bg-[#05070f] border-[#1e3054] text-[#8a9bc2] hover:border-[#4f8ef7]/60 hover:text-[#4f8ef7]"
+                }`}
+              >
+                {v}
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <button
+        disabled={!allAnswered}
+        onClick={() => setSubmitted(true)}
+        className="px-6 py-2.5 bg-[#4f8ef7] text-white rounded-xl font-heading font-semibold text-sm disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#4f8ef7]/90 transition-opacity"
+      >
+        See My SDL Readiness Score
+      </button>
+
+      {result && (
+        <div className="bg-[#05070f] border border-[#1e3054] rounded-xl p-5 space-y-2">
+          <div className="flex items-baseline gap-3">
+            <span className="text-3xl font-bold text-[#f0f4ff]">{total}<span className="text-base text-[#8a9bc2] font-normal">/30</span></span>
+            <span className={`font-heading font-bold text-lg ${result.color}`}>{result.level}</span>
+          </div>
+          <p className="text-[#8a9bc2] text-sm leading-relaxed">{result.detail}</p>
+          <button
+            onClick={() => { setAnswers({}); setSubmitted(false); }}
+            className="text-xs text-[#4f8ef7] hover:underline"
+          >
+            Reset
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Panel registry ──────────────────────────────────────────────────────────
+
+function FrameworkPanel() {
+  const [active, setActive] = useState(0);
+  const fw = FRAMEWORKS[active];
+  return (
+    <div className="grid md:grid-cols-[220px_1fr] gap-6">
+      <nav className="flex flex-col gap-1">
+        {FRAMEWORKS.map((f, i) => (
+          <button
+            key={i}
+            onClick={() => setActive(i)}
+            className={`text-left px-4 py-2.5 rounded-lg text-sm transition-all ${
+              active === i
+                ? "bg-[#4f8ef7]/15 border border-[#4f8ef7]/40 text-[#4f8ef7] font-semibold"
+                : "text-[#8a9bc2] hover:text-[#f0f4ff] border border-transparent"
+            }`}
+          >
+            <span className="block font-medium">{f.name}</span>
+            <span className="text-xs opacity-60">{f.year}</span>
+          </button>
+        ))}
+      </nav>
+      <div className="space-y-4">
+        <div>
+          <h4 className="font-heading font-bold text-[#f0f4ff] text-lg">{fw.name} <span className="text-[#4f8ef7] text-sm">({fw.year})</span></h4>
+          <p className="text-[#8a9bc2] text-sm mt-1">{fw.summary}</p>
+        </div>
+        <ul className="space-y-2">
+          {fw.points.map((p, i) => (
+            <li key={i} className="flex gap-2 text-sm text-[#8a9bc2]">
+              <span className="text-[#4f8ef7] mt-0.5 shrink-0">›</span>
+              <span>{p}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function LabsPanel() {
+  return (
+    <div className="grid sm:grid-cols-2 gap-4">
+      {LABS.map((lab, i) => (
+        <div key={i} className="bg-[#05070f] border border-[#1e3054] rounded-xl p-4 space-y-2">
+          <div className="flex items-start justify-between gap-2">
+            <h4 className="font-heading font-semibold text-[#f0f4ff] text-sm leading-snug">{lab.name}</h4>
+            {lab.url && (
+              <a href={lab.url} target="_blank" rel="noopener noreferrer" className="text-[#4f8ef7] hover:text-[#f0f4ff] shrink-0 mt-0.5">
+                <ExternalLink size={13} />
+              </a>
+            )}
+          </div>
+          <p className="text-xs text-[#4f8ef7] font-medium">{lab.location}</p>
+          <p className="text-xs text-[#8a9bc2]"><span className="text-[#f0f4ff]/70">Lead: </span>{lab.lead}</p>
+          <p className="text-xs text-[#8a9bc2] leading-relaxed">{lab.focus}</p>
+          <p className="text-xs text-[#8a9bc2]/70 italic">{lab.highlight}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function EventsPanel() {
+  return (
+    <div className="space-y-4">
+      {EVENTS.map((ev, i) => (
+        <div key={i} className="bg-[#05070f] border border-[#1e3054] rounded-xl p-4 flex gap-4">
+          <div className="w-1 rounded-full bg-[#4f8ef7] shrink-0" />
+          <div className="space-y-1 flex-1">
+            <div className="flex items-start justify-between gap-2">
+              <h4 className="font-heading font-semibold text-[#f0f4ff] text-sm">{ev.name}</h4>
+              {ev.url && (
+                <a href={ev.url} target="_blank" rel="noopener noreferrer" className="text-[#4f8ef7] hover:text-[#f0f4ff] shrink-0">
+                  <ExternalLink size={13} />
+                </a>
+              )}
+            </div>
+            <p className="text-xs text-[#4f8ef7]">{ev.org} · {ev.cadence}</p>
+            <p className="text-xs text-[#8a9bc2] leading-relaxed">{ev.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ─── Feature definitions ─────────────────────────────────────────────────────
 
 const features = [
   {
+    id: "chat",
     title: "SDL Knowledge Chat",
     description: "Ask anything about SDL theory, research, and practice",
     icon: MessageSquare,
+    action: "scroll",
+    target: "chat",
   },
   {
+    id: "research",
     title: "Research Trends",
     description: "Discover the latest published work and emerging topics in SDL",
     icon: TrendingUp,
+    action: "scroll",
+    target: "research",
   },
   {
+    id: "frameworks",
     title: "Framework Navigator",
-    description: "Explore Garrison, Knowles, Zimmerman, and more",
+    description: "Explore Garrison, Knowles, Zimmerman, Candy, and more",
     icon: Compass,
+    action: "panel",
   },
   {
+    id: "labs",
     title: "Global Labs Map",
     description: "Find SDL research units and collaborators worldwide",
     icon: Globe,
+    action: "panel",
   },
   {
-    title: "Symposium & Events",
+    id: "events",
+    title: "Symposia & Events",
     description: "Stay current with ISSDL events, awards, and calls for papers",
     icon: Calendar,
+    action: "panel",
   },
   {
+    id: "assessment",
     title: "SDL Self-Assessment",
     description: "Gauge your readiness for self-directed learning",
     icon: CheckSquare,
-  }
+    action: "panel",
+  },
 ];
 
+const PANEL_TITLES: Record<string, string> = {
+  frameworks: "SDL Framework Navigator",
+  labs: "Global SDL Research Labs",
+  events: "Symposia & Events",
+  assessment: "SDL Readiness Self-Assessment",
+};
+
+function PanelContent({ id }: { id: string }) {
+  if (id === "frameworks") return <FrameworkPanel />;
+  if (id === "labs") return <LabsPanel />;
+  if (id === "events") return <EventsPanel />;
+  if (id === "assessment") return <SelfAssessmentPanel />;
+  return null;
+}
+
+// ─── Main component ──────────────────────────────────────────────────────────
+
 export default function Features() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [activePanel, setActivePanel] = useState<string | null>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          }
+          if (entry.isIntersecting) entry.target.classList.add("is-visible");
         });
       },
       { threshold: 0.1 }
     );
-
     const cards = document.querySelectorAll(".fade-in-up");
     cards.forEach((card) => observer.observe(card));
-
-    return () => {
-      cards.forEach((card) => observer.unobserve(card));
-    };
+    return () => cards.forEach((card) => observer.unobserve(card));
   }, []);
 
+  function handleClick(feature: typeof features[number]) {
+    if (feature.action === "scroll" && feature.target) {
+      document.getElementById(feature.target)?.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    const next = activePanel === feature.id ? null : feature.id;
+    setActivePanel(next);
+    if (next) {
+      setTimeout(() => panelRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }), 80);
+    }
+  }
+
   return (
-    <section 
-      id="features" 
+    <section
+      id="features"
       className="py-24 bg-[#05070f] relative"
       data-testid="section-features"
     >
-      <div className="container mx-auto px-6 max-w-6xl" ref={containerRef}>
+      <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16 fade-in-up">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#f0f4ff] mb-4 uppercase tracking-wide">
             Platform Capabilities
           </h2>
-          <div className="h-1 w-24 bg-[#4f8ef7] mx-auto rounded-full"></div>
+          <div className="h-1 w-24 bg-[#4f8ef7] mx-auto rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="bg-[#0e1a2e] border border-[#1e3054] rounded-xl p-8 fade-in-up transition-all duration-300 hover:border-[#4f8ef7]/50 hover:-translate-y-1 hover:shadow-[0_10px_30px_-15px_rgba(79,142,247,0.3)]"
-              style={{ transitionDelay: `${index * 100}ms` }}
-              data-testid={`card-feature-${index}`}
-            >
-              <div className="w-12 h-12 rounded-lg bg-[#05070f] border border-[#1e3054] flex items-center justify-center mb-6 text-[#4f8ef7]">
-                <feature.icon className="w-6 h-6" />
-              </div>
-              <h3 className="font-heading text-xl font-bold text-[#f0f4ff] mb-3">
-                {feature.title}
-              </h3>
-              <p className="font-body text-[#8a9bc2] leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+          {features.map((feature, index) => {
+            const isActive = activePanel === feature.id;
+            return (
+              <button
+                key={feature.id}
+                onClick={() => handleClick(feature)}
+                className={`text-left bg-[#0e1a2e] border rounded-xl p-8 fade-in-up transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-15px_rgba(79,142,247,0.3)] ${
+                  isActive
+                    ? "border-[#4f8ef7] shadow-[0_0_0_1px_rgba(79,142,247,0.3)]"
+                    : "border-[#1e3054] hover:border-[#4f8ef7]/50"
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+                data-testid={`card-feature-${index}`}
+              >
+                <div
+                  className={`w-12 h-12 rounded-lg border flex items-center justify-center mb-6 transition-colors ${
+                    isActive
+                      ? "bg-[#4f8ef7]/15 border-[#4f8ef7]/50 text-[#4f8ef7]"
+                      : "bg-[#05070f] border-[#1e3054] text-[#4f8ef7]"
+                  }`}
+                >
+                  <feature.icon className="w-6 h-6" />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-[#f0f4ff] mb-3">
+                  {feature.title}
+                </h3>
+                <p className="font-body text-[#8a9bc2] leading-relaxed text-sm">
+                  {feature.description}
+                </p>
+                {feature.action === "scroll" && (
+                  <p className="text-xs text-[#4f8ef7] mt-3 font-medium">↓ Jump to section</p>
+                )}
+                {feature.action === "panel" && (
+                  <p className="text-xs text-[#4f8ef7] mt-3 font-medium">
+                    {isActive ? "▲ Collapse" : "▼ Explore"}
+                  </p>
+                )}
+              </button>
+            );
+          })}
         </div>
+
+        {/* Inline panel */}
+        {activePanel && (
+          <div
+            ref={panelRef}
+            className="mt-8 bg-[#0e1a2e] border border-[#4f8ef7]/40 rounded-2xl p-6 md:p-8"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="font-heading text-xl font-bold text-[#f0f4ff]">
+                {PANEL_TITLES[activePanel]}
+              </h3>
+              <button
+                onClick={() => setActivePanel(null)}
+                className="text-[#8a9bc2] hover:text-[#f0f4ff] transition-colors p-1"
+                aria-label="Close panel"
+              >
+                <X size={18} />
+              </button>
+            </div>
+            <PanelContent id={activePanel} />
+          </div>
+        )}
       </div>
     </section>
   );
