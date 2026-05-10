@@ -63,21 +63,22 @@ export default function ChatSection() {
         body: JSON.stringify({ messages: next }),
       });
 
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        const msg = (body as { error?: string }).error ?? `Server error (HTTP ${res.status})`;
+        throw new Error(msg);
+      }
 
       const data = (await res.json()) as { content: string };
       setMessages((prev) => [
         ...prev,
         { role: "assistant", content: data.content },
       ]);
-    } catch {
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Unknown error";
       setMessages((prev) => [
         ...prev,
-        {
-          role: "assistant",
-          content:
-            "Sorry, I couldn't reach the server. Please check your connection and try again.",
-        },
+        { role: "assistant", content: `Error: ${message}` },
       ]);
     } finally {
       setIsLoading(false);
