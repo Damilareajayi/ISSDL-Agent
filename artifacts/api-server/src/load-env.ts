@@ -1,16 +1,49 @@
-import { fileURLToPath } from "url";
-import { dirname, resolve } from "path";
-import { config } from "dotenv";
+import { resolve } from "path";
+import { existsSync, readFileSync } from "fs";
 
-// Resolve .env from this file's location at runtime.
-// In the esbuild output, import.meta.url = the bundled dist/index.mjs URL,
-// so dirname(...) = artifacts/api-server/dist, and "../.env" = artifacts/api-server/.env.
-// This is CWD-independent — it works no matter where pnpm launches the process from.
-const envPath = resolve(dirname(fileURLToPath(import.meta.url)), "../.env");
-const result = config({ path: envPath });
+// esbuild's build banner sets globalThis.__dirname to the directory of the
+// compiled dist/index.mjs — completely independent of process.cwd().
+// This resolves to artifacts/api-server/dist, so "../.env" → artifacts/api-server/.env.
+// eslint-disable-next-line no-var
+declare var __dirname: string | undefined;
+const bundleDir: string | undefined = typeof __dirname !== "undefined" ? __dirname : undefined;
 
-if (result.error) {
-  console.warn(`[env] .env not found at ${envPath} — falling back to process environment`);
-} else {
-  console.log(`[env] Loaded .env from ${envPath}`);
+// Check candidates in order; first one found wins.
+const candidates = [
+  ...(bundleDir ? [resolve(bundleDir, "../.env")] : []),
+  resolve(process.cwd(), ".env"),
+];
+
+let loaded = false;
+
+for (const envPath of candidates) {
+  if (!existsSync(envPath)) continue;
+  try {
+    // Parse manually — avoids dotenv bundling quirks and CWD dependency.
+    const raw = readFileSync(envPath, "utf-8").replace(/^﻿/, ""); // strip BOM
+    for (const line of raw.split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith("#")) continue;
+      const eq = trimmed.indexOf("=");
+      if (eq === -1) continue;
+      const key = trimmed.slice(0, eq).trim();
+      let val = trimmed.slice(eq + 1).trim();
+      // Strip surrounding quotes
+      if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+        val = val.slice(1, -1);
+      }
+      // Don't override vars already set in the real environment
+      if (!(key in process.env)) process.env[key] = val;
+    }
+    console.log(`[env] Loaded ${envPath}`);
+    loaded = true;
+  } catch (e) {
+    console.error(`[env] Failed to read ${envPath}:`, e);
+  }
+  break;
+}
+
+if (!loaded) {
+  console.warn(`[env] .env not found. Searched: ${candidates.join(", ")}`);
+  console.warn(`[env] GEMINI_API_KEY must be set in the process environment.`);
 }
