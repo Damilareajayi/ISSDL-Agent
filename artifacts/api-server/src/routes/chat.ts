@@ -71,10 +71,14 @@ router.post("/chat", async (req: Request<object, object, ChatRequestBody>, res: 
       toolConfig: { functionCallingConfig: { mode: FunctionCallingMode.AUTO } },
     });
 
-    const history = messages.slice(0, -1).map((m) => ({
-      role: m.role === "assistant" ? "model" : "user",
+    // Gemini requires history to start with "user". Drop any leading assistant
+    // messages (e.g. the synthetic welcome message from the frontend).
+    const allHistory = messages.slice(0, -1).map((m) => ({
+      role: (m.role === "assistant" ? "model" : "user") as "model" | "user",
       parts: [{ text: m.content }],
     }));
+    const firstUserIdx = allHistory.findIndex((m) => m.role === "user");
+    const history = firstUserIdx === -1 ? [] : allHistory.slice(firstUserIdx);
 
     const lastMessage = messages[messages.length - 1];
     const chat = model.startChat({ history });
