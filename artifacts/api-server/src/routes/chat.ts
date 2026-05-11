@@ -63,8 +63,9 @@ router.post("/chat", async (req: Request<object, object, ChatRequestBody>, res: 
 
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
+    const modelName = process.env.GEMINI_MODEL ?? "gemini-2.0-flash";
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.0-flash",
+      model: modelName,
       systemInstruction: SYSTEM_PROMPT,
       tools: [{ functionDeclarations: [searchPublicationsTool] }],
       toolConfig: { functionCallingConfig: { mode: FunctionCallingMode.AUTO } },
@@ -108,8 +109,9 @@ router.post("/chat", async (req: Request<object, object, ChatRequestBody>, res: 
 
     res.json({ content: response.text() });
   } catch (error) {
-    req.log.error({ error }, "Chat route error");
-    res.status(500).json({ error: "Failed to process chat request" });
+    const message = error instanceof Error ? error.message : String(error);
+    req.log.error({ error: message }, "Chat route error");
+    res.status(500).json({ error: message });
   }
 });
 

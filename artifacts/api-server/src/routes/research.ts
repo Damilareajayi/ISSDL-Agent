@@ -16,8 +16,9 @@ router.get("/research", async (req: Request, res: Response) => {
     const results = await searchAllSources(query, limit, coreApiKey);
     res.json({ query, results });
   } catch (error) {
-    req.log.error({ error }, "Research search error");
-    res.status(500).json({ error: "Failed to search publications" });
+    const message = error instanceof Error ? error.message : String(error);
+    req.log.error({ error: message }, "Research search error");
+    res.status(500).json({ error: message });
   }
 });
 
