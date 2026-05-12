@@ -7,3 +7,6 @@ node_modules
 **/.env
 attached_assets
 artifacts/mockup-sandbox
+!artifacts/mockup-sandbox/package.json
+.pnpm-store
+**/.pnpm-store
