@@ -39,30 +39,31 @@
 }
 
 :root {
-  --background: #05070f;
-  --foreground: #f0f4ff;
-  --border: #1e3054;
-  --input: #1e3054;
-  --ring: #4f8ef7;
+  /* Light / day theme — sky blue */
+  --background: #f0f8ff;
+  --foreground: #0c1a3a;
+  --border: #bae6fd;
+  --input: #e0f2fe;
+  --ring: #0284c7;
 
-  --card: #0e1a2e;
-  --card-foreground: #f0f4ff;
-  --card-border: #1e3054;
+  --card: #ffffff;
+  --card-foreground: #0c1a3a;
+  --card-border: #bae6fd;
 
-  --primary: #4f8ef7;
-  --primary-foreground: #f0f4ff;
+  --primary: #0284c7;
+  --primary-foreground: #ffffff;
 
-  --secondary: #1e3054;
-  --secondary-foreground: #f0f4ff;
+  --secondary: #e0f2fe;
+  --secondary-foreground: #0c4a6e;
 
-  --muted: #0e1a2e;
-  --muted-foreground: #8a9bc2;
+  --muted: #e0f2fe;
+  --muted-foreground: #475569;
 
-  --accent: #4f8ef7;
-  --accent-foreground: #f0f4ff;
+  --accent: #0284c7;
+  --accent-foreground: #ffffff;
 
   --destructive: #ef4444;
-  --destructive-foreground: #f0f4ff;
+  --destructive-foreground: #ffffff;
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: Georgia, serif;
