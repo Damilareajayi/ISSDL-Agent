@@ -42,7 +42,7 @@ const staticDir = process.env["STATIC_DIR"]
 if (fs.existsSync(staticDir)) {
   app.use(express.static(staticDir));
   // SPA fallback — any non-API route returns index.html
-  app.get("*", (_req, res) => {
+  app.use((_req, res) => {
     res.sendFile(path.join(staticDir, "index.html"));
   });
   logger.info({ staticDir }, "Serving static frontend");
