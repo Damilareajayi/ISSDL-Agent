@@ -1,7 +1,9 @@
 # syntax=docker/dockerfile:1
 
 # ---- build stage ----
-FROM node:22-alpine AS builder
+# Use Debian (not Alpine) — native build deps like @swc/core and unrs-resolver
+# ship glibc binaries which fail on Alpine's musl libc.
+FROM node:22 AS builder
 
 RUN corepack enable && corepack prepare pnpm@11.0.9 --activate
 
