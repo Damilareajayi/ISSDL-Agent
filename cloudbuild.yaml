@@ -1,0 +1,34 @@
+steps:
+  # Build the container image using BuildKit (handles pnpm monorepo contexts cleanly)
+  - name: 'gcr.io/cloud-builders/docker'
+    env:
+      - 'DOCKER_BUILDKIT=1'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/sdl-intelligence:$COMMIT_SHA'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/sdl-intelligence:latest'
+      - '.'
+
+  # Push both tags
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', '--all-tags', 'gcr.io/$PROJECT_ID/sdl-intelligence']
+
+  # Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'sdl-intelligence'
+      - '--image=gcr.io/$PROJECT_ID/sdl-intelligence:$COMMIT_SHA'
+      - '--region=europe-west1'
+      - '--platform=managed'
+      - '--allow-unauthenticated'
+
+images:
+  - 'gcr.io/$PROJECT_ID/sdl-intelligence'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
