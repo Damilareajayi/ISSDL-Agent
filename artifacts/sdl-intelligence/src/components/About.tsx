@@ -28,28 +28,28 @@ export default function About() {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-card border border-border rounded-xl p-8 fade-in-up">
+            <div className="bg-card border border-border rounded-2xl p-8 fade-in-up hover:shadow-lg transition-shadow duration-300">
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 shrink-0 rounded-lg bg-background border border-border flex items-center justify-center text-primary">
-                  <BookOpen size={28} />
+                <div className="w-16 h-16 shrink-0 rounded-2xl flex items-center justify-center" style={{ backgroundColor: "#3B82F618", color: "#3B82F6" }}>
+                  <BookOpen size={28} strokeWidth={1.6} />
                 </div>
                 <div>
                   <h3 className="font-heading text-xl font-bold text-foreground mb-2">RECAST Lab</h3>
-                  <p className="font-body text-muted-foreground mb-1">Florida State University</p>
-                  <p className="text-sm text-muted-foreground/70">Research on Educational Cognition, Assessment, and Self-Regulation Technologies.</p>
+                  <p className="font-body font-medium mb-1" style={{ color: "#3B82F6" }}>Florida State University</p>
+                  <p className="text-sm text-muted-foreground">Research on Educational Cognition, Assessment, and Self-Regulation Technologies.</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-card border border-border rounded-xl p-8 fade-in-up" style={{ transitionDelay: "150ms" }}>
+            <div className="bg-card border border-border rounded-2xl p-8 fade-in-up hover:shadow-lg transition-shadow duration-300" style={{ transitionDelay: "150ms" }}>
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 shrink-0 rounded-lg bg-background border border-border flex items-center justify-center text-primary">
-                  <Award size={28} />
+                <div className="w-16 h-16 shrink-0 rounded-2xl flex items-center justify-center" style={{ backgroundColor: "#e6394618", color: "#e63946" }}>
+                  <Award size={28} strokeWidth={1.6} />
                 </div>
                 <div>
                   <h3 className="font-heading text-xl font-bold text-foreground mb-2">SDL Research Lab</h3>
-                  <p className="font-body text-muted-foreground mb-1">North-West University, South Africa</p>
-                  <p className="text-sm text-muted-foreground/70">Leading center of excellence in advancing self-directed learning scholarship globally.</p>
+                  <p className="font-body font-medium mb-1" style={{ color: "#e63946" }}>North-West University, South Africa</p>
+                  <p className="text-sm text-muted-foreground">Leading center of excellence in advancing self-directed learning scholarship globally.</p>
                 </div>
               </div>
             </div>

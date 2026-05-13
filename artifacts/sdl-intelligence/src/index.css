@@ -39,35 +39,36 @@
 }
 
 :root {
-  /* Light / day theme — warm stone palette */
-  --background: #fafaf9;
-  --foreground: #1c1917;
-  --border: #e7e5e4;
-  --input: #f5f5f4;
-  --ring: #2563eb;
+  /* Light theme — vibrant coral/red primary, white base */
+  --background: #ffffff;
+  --foreground: #111827;
+  --border: #e5e7eb;
+  --input: #f9fafb;
+  --ring: #e63946;
 
-  --card: #f5f5f4;
-  --card-foreground: #1c1917;
-  --card-border: #e7e5e4;
+  --card: #f9fafb;
+  --card-foreground: #111827;
+  --card-border: #e5e7eb;
 
-  --primary: #2563eb;
+  --primary: #e63946;
   --primary-foreground: #ffffff;
 
-  --secondary: #f5f5f4;
-  --secondary-foreground: #44403c;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #374151;
 
-  --muted: #f5f5f4;
-  --muted-foreground: #78716c;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
 
-  --accent: #2563eb;
+  --accent: #e63946;
   --accent-foreground: #ffffff;
 
-  --destructive: #ef4444;
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
 
-  --hero-gradient: linear-gradient(165deg, #fafaf9 0%, #eff6ff 60%, #dbeafe 100%);
-  --hero-particle: 37, 99, 235;
-  --hero-wave: #fafaf9;
+  /* Hero stays deep dark for dramatic contrast in both modes */
+  --hero-gradient: linear-gradient(135deg, #0f0c29 0%, #1a1035 50%, #0d1428 100%);
+  --hero-particle: 230, 57, 70;
+  --hero-wave: #ffffff;
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: Georgia, serif;
@@ -78,31 +79,31 @@
 .dark {
   --background: #05070f;
   --foreground: #f0f4ff;
-  --border: #1e3054;
-  --input: #1e3054;
-  --ring: #4f8ef7;
+  --border: #1e2040;
+  --input: #1e2040;
+  --ring: #ff5a45;
 
-  --card: #0e1a2e;
+  --card: #0e1020;
   --card-foreground: #f0f4ff;
-  --card-border: #1e3054;
+  --card-border: #1e2040;
 
-  --primary: #4f8ef7;
-  --primary-foreground: #f0f4ff;
+  --primary: #ff5a45;
+  --primary-foreground: #ffffff;
 
-  --secondary: #1e3054;
+  --secondary: #1e2040;
   --secondary-foreground: #f0f4ff;
 
-  --muted: #0e1a2e;
-  --muted-foreground: #8a9bc2;
+  --muted: #0e1020;
+  --muted-foreground: #8080aa;
 
-  --accent: #4f8ef7;
-  --accent-foreground: #f0f4ff;
+  --accent: #ff5a45;
+  --accent-foreground: #ffffff;
 
   --destructive: #ef4444;
   --destructive-foreground: #f0f4ff;
 
-  --hero-gradient: linear-gradient(165deg, #05070f 0%, #0a1228 55%, #0d1b3e 100%);
-  --hero-particle: 79, 142, 247;
+  --hero-gradient: linear-gradient(135deg, #05070f 0%, #10050a 50%, #050f1a 100%);
+  --hero-particle: 255, 90, 69;
   --hero-wave: #05070f;
 }
 

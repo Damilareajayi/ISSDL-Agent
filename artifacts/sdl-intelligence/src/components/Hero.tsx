@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const STATS = [
-  { value: 600, suffix: "M+", label: "Papers Indexed" },
-  { value: 17, suffix: "", label: "Open-Access SDL Volumes" },
-  { value: 40, suffix: "+", label: "Years of Research" },
-  { value: 5, suffix: "", label: "Global Research Labs" },
+  { value: 600, suffix: "M+", label: "Papers Indexed",          color: "#FF5A45" },
+  { value: 17,  suffix: "",   label: "Open-Access SDL Volumes", color: "#F59E0B" },
+  { value: 40,  suffix: "+",  label: "Years of Research",       color: "#06B6D4" },
+  { value: 5,   suffix: "",   label: "Global Research Labs",    color: "#10B981" },
 ];
 
 const FULL_SUBTITLE = "Explore research, frameworks, and global collaboration in Self-Directed Learning";
@@ -25,17 +25,17 @@ function useCountUp(target: number, duration: number, triggered: boolean) {
   return count;
 }
 
-function StatCounter({ value, suffix, label, triggered }: { value: number; suffix: string; label: string; triggered: boolean }) {
+function StatCounter({ value, suffix, label, color, triggered }: { value: number; suffix: string; label: string; color: string; triggered: boolean }) {
   const count = useCountUp(value, 1800, triggered);
   return (
     <div className="text-center">
       <div
-        className="font-heading font-bold text-foreground tabular-nums"
-        style={{ fontSize: "clamp(22px, 5.5vw, 44px)", lineHeight: 1 }}
+        className="font-heading font-bold tabular-nums"
+        style={{ fontSize: "clamp(22px, 5.5vw, 44px)", lineHeight: 1, color }}
       >
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="font-body text-muted-foreground uppercase tracking-wider mt-2 leading-tight" style={{ fontSize: "clamp(9px, 2vw, 12px)" }}>
+      <div className="font-body uppercase tracking-wider mt-2 leading-tight" style={{ fontSize: "clamp(9px, 2vw, 12px)", color: "rgba(240,244,255,0.6)" }}>
         {label}
       </div>
     </div>
@@ -205,13 +205,14 @@ export default function Hero() {
           top: "50%", left: "50%",
           transform: "translate(-50%, -60%)",
           width: "90vw", height: "55vh",
-          background: "radial-gradient(ellipse at center, rgba(var(--hero-particle), 0.07) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse at center, rgba(255,90,69,0.08) 0%, transparent 70%)",
         }}
       />
 
       <div className="relative z-10 flex flex-col items-center text-center w-full px-5 sm:px-6" style={{ marginTop: "-4vh" }}>
         <p
-          className="font-body text-primary uppercase font-medium mb-6 sm:mb-8 tracking-[0.12em] sm:tracking-[0.22em] text-[10px] sm:text-xs md:text-sm"
+          className="font-body uppercase font-medium mb-6 sm:mb-8 tracking-[0.12em] sm:tracking-[0.22em] text-[10px] sm:text-xs md:text-sm"
+          style={{ color: "#FF5A45" }}
           data-testid="text-hero-eyebrow"
         >
           The Global Knowledge Hub for Self-Directed Learning
@@ -219,13 +220,13 @@ export default function Hero() {
 
         <h1
           ref={titleRef}
-          className="font-heading font-bold text-foreground uppercase leading-none w-full"
-          style={{ fontSize: "clamp(36px, 11.5vw, 148px)", letterSpacing: "-0.01em", lineHeight: 0.95 }}
+          className="font-heading font-bold uppercase leading-none w-full"
+          style={{ fontSize: "clamp(36px, 11.5vw, 148px)", letterSpacing: "-0.01em", lineHeight: 0.95, color: "#f0f4ff" }}
           data-testid="text-hero-title"
         >
           SDL
           <br />
-          <span className="text-primary" style={{ textShadow: "0 0 80px rgba(var(--hero-particle), 0.35)" }}>
+          <span style={{ color: "#FF5A45", textShadow: "0 0 80px rgba(255,90,69,0.4)" }}>
             INTELLIGENCE
           </span>
         </h1>
@@ -234,19 +235,20 @@ export default function Hero() {
           className="mt-8 sm:mt-10 mb-6 sm:mb-8"
           style={{
             width: "clamp(50px, 8vw, 120px)", height: "1px",
-            background: "linear-gradient(to right, transparent, var(--primary), transparent)",
+            background: "linear-gradient(to right, transparent, #FF5A45, transparent)",
             opacity: 0.6,
           }}
         />
 
         <p
-          className="font-body text-muted-foreground max-w-xl text-base sm:text-lg md:text-xl leading-relaxed mb-8 md:mb-12 px-2"
+          className="font-body max-w-xl text-base sm:text-lg md:text-xl leading-relaxed mb-8 md:mb-12 px-2"
+          style={{ color: "rgba(240,244,255,0.75)" }}
           data-testid="text-hero-subtitle"
         >
           {subtitleText}
           <span
-            className="text-primary"
             style={{
+              color: "#FF5A45",
               animation: typingDone ? "blink 1s step-end infinite" : "none",
               fontWeight: 300,
             }}
@@ -255,8 +257,8 @@ export default function Hero() {
 
         <button
           onClick={scrollToFeatures}
-          className="font-heading font-bold uppercase tracking-widest px-8 sm:px-10 py-3.5 sm:py-4 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl text-xs sm:text-sm"
-          style={{ letterSpacing: "0.15em" }}
+          className="font-heading font-bold uppercase tracking-widest px-8 sm:px-10 py-3.5 sm:py-4 rounded-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl text-xs sm:text-sm"
+          style={{ letterSpacing: "0.15em", backgroundColor: "#FF5A45", color: "#ffffff" }}
           data-testid="button-start-exploring"
         >
           Start Exploring
@@ -266,10 +268,7 @@ export default function Hero() {
         <div
           ref={statsRef}
           className="mt-10 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-x-4 sm:gap-x-8 gap-y-6 sm:gap-y-8 w-full max-w-3xl"
-          style={{
-            paddingTop: "1.25rem",
-            borderTop: "1px solid rgba(var(--hero-particle), 0.15)",
-          }}
+          style={{ paddingTop: "1.25rem", borderTop: "1px solid rgba(255,90,69,0.2)" }}
         >
           {STATS.map((stat) => (
             <StatCounter key={stat.label} {...stat} triggered={statsVisible} />
@@ -277,8 +276,8 @@ export default function Hero() {
         </div>
 
         <p
-          className="font-body text-muted-foreground mt-6 sm:mt-8 uppercase text-center px-4 leading-relaxed"
-          style={{ opacity: 0.55, fontSize: "clamp(8px, 2vw, 11px)", letterSpacing: "0.1em" }}
+          className="font-body mt-6 sm:mt-8 uppercase text-center px-4 leading-relaxed"
+          style={{ color: "rgba(240,244,255,0.4)", fontSize: "clamp(8px, 2vw, 11px)", letterSpacing: "0.1em" }}
           data-testid="text-hero-powered-by"
         >
           RECAST Lab, Florida State University

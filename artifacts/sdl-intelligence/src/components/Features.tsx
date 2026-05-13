@@ -279,13 +279,13 @@ function EventsPanel() {
 }
 
 const features = [
-  { id: "chat", title: "SDL Knowledge Chat", description: "Ask anything about SDL theory, research, and practice", icon: MessageSquare, action: "scroll", target: "chat" },
-  { id: "research", title: "Research Trends", description: "Discover the latest published work and emerging topics in SDL", icon: TrendingUp, action: "scroll", target: "research" },
-  { id: "frameworks", title: "Framework Navigator", description: "Explore Garrison, Knowles, Zimmerman, Candy, and more", icon: Compass, action: "panel" },
-  { id: "labs", title: "Global Labs Map", description: "Find SDL research units and collaborators worldwide", icon: Globe, action: "panel" },
-  { id: "events", title: "Symposia & Events", description: "Stay current with ISSDL events, awards, and calls for papers", icon: Calendar, action: "panel" },
-  { id: "assessment", title: "SDL Self-Assessment", description: "Gauge your readiness for self-directed learning", icon: CheckSquare, action: "panel" },
-];
+  { id: "chat",       title: "SDL Knowledge Chat",    description: "Ask anything about SDL theory, research, and practice",              icon: MessageSquare, action: "scroll", target: "chat",     color: "#e63946" },
+  { id: "research",   title: "Research Explorer",     description: "Discover the latest published work and emerging topics in SDL",       icon: TrendingUp,    action: "scroll", target: "research", color: "#3B82F6" },
+  { id: "frameworks", title: "Framework Navigator",   description: "Explore Garrison, Knowles, Zimmerman, Candy, and more",              icon: Compass,       action: "panel",                      color: "#7C3AED" },
+  { id: "labs",       title: "Global Research Labs",  description: "Find SDL research units and collaborators worldwide",                 icon: Globe,         action: "panel",                      color: "#06B6D4" },
+  { id: "events",     title: "Symposia & Events",     description: "Stay current with ISSDL events, awards, and calls for papers",        icon: Calendar,      action: "panel",                      color: "#F59E0B" },
+  { id: "assessment", title: "SDL Self-Assessment",   description: "Gauge your readiness for self-directed learning in 6 dimensions",    icon: CheckSquare,   action: "panel",                      color: "#10B981" },
+] as const;
 
 const PANEL_TITLES: Record<string, string> = {
   frameworks: "SDL Framework Navigator",
@@ -343,37 +343,60 @@ export default function Features() {
               <button
                 key={feature.id}
                 onClick={() => handleClick(feature)}
-                className={`text-left bg-card border rounded-xl p-8 fade-in-up transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
-                  isActive ? "border-primary shadow-md" : "border-border hover:border-primary/50"
-                }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
+                className="text-left bg-card border rounded-2xl p-6 sm:p-8 fade-in-up transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                style={{
+                  transitionDelay: `${index * 80}ms`,
+                  borderColor: isActive ? feature.color : undefined,
+                  boxShadow: isActive ? `0 8px 30px ${feature.color}25` : undefined,
+                }}
                 data-testid={`card-feature-${index}`}
               >
-                <div className={`w-12 h-12 rounded-lg border flex items-center justify-center mb-6 transition-colors ${
-                  isActive ? "bg-primary/10 border-primary/50 text-primary" : "bg-background border-border text-primary"
-                }`}>
-                  <feature.icon className="w-6 h-6" />
+                {/* cchub-style rounded square icon badge */}
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 hover:scale-110"
+                  style={{ backgroundColor: `${feature.color}18`, color: feature.color }}
+                >
+                  <feature.icon className="w-6 h-6" strokeWidth={1.8} />
                 </div>
-                <h3 className="font-heading text-xl font-bold text-foreground mb-3">{feature.title}</h3>
+                <h3
+                  className="font-heading text-lg sm:text-xl font-bold mb-3 transition-colors"
+                  style={{ color: isActive ? feature.color : undefined }}
+                >
+                  {feature.title}
+                </h3>
                 <p className="font-body text-muted-foreground leading-relaxed text-sm">{feature.description}</p>
-                {feature.action === "scroll" && <p className="text-xs text-primary mt-3 font-medium">↓ Jump to section</p>}
-                {feature.action === "panel" && <p className="text-xs text-primary mt-3 font-medium">{isActive ? "▲ Collapse" : "▼ Explore"}</p>}
+                <p className="text-xs mt-4 font-semibold" style={{ color: feature.color }}>
+                  {"action" in feature && feature.action === "scroll" ? "↓ Jump to section" : isActive ? "▲ Collapse" : "▼ Explore"}
+                </p>
               </button>
             );
           })}
         </div>
 
-        {activePanel && (
-          <div ref={panelRef} className="mt-8 bg-card border border-primary/30 rounded-2xl p-6 md:p-8">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="font-heading text-xl font-bold text-foreground">{PANEL_TITLES[activePanel]}</h3>
-              <button onClick={() => setActivePanel(null)} className="text-muted-foreground hover:text-foreground transition-colors p-1" aria-label="Close panel">
-                <X size={18} />
-              </button>
+        {activePanel && (() => {
+          const activeFeat = features.find(f => f.id === activePanel);
+          const activeColor = activeFeat?.color ?? "#e63946";
+          return (
+            <div
+              ref={panelRef}
+              className="mt-8 bg-card border rounded-2xl p-6 md:p-8"
+              style={{ borderColor: `${activeColor}40` }}
+            >
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${activeColor}18`, color: activeColor }}>
+                    {activeFeat && <activeFeat.icon size={16} strokeWidth={1.8} />}
+                  </div>
+                  <h3 className="font-heading text-xl font-bold text-foreground">{PANEL_TITLES[activePanel]}</h3>
+                </div>
+                <button onClick={() => setActivePanel(null)} className="text-muted-foreground hover:text-foreground transition-colors p-1.5 rounded-lg hover:bg-border" aria-label="Close panel">
+                  <X size={16} />
+                </button>
+              </div>
+              <PanelContent id={activePanel} />
             </div>
-            <PanelContent id={activePanel} />
-          </div>
-        )}
+          );
+        })()}
       </div>
     </section>
   );
