@@ -178,7 +178,7 @@ export default function ChatSection() {
           </p>
         </div>
 
-        <div className="flex bg-card border border-border rounded-2xl overflow-hidden shadow-xl h-[660px]">
+        <div className="flex bg-card border border-border rounded-2xl overflow-hidden shadow-xl h-[520px] sm:h-[600px] md:h-[660px]">
 
           {/* ── Sidebar ── */}
           <div className="hidden md:flex w-56 flex-col border-r border-border bg-background shrink-0">

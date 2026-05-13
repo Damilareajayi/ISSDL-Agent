@@ -157,15 +157,15 @@ export default function ResearchSection() {
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && void search(query)}
               placeholder="Search SDL publications…"
-              className="flex-1 bg-card border border-border rounded-xl py-3 px-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+              className="flex-1 min-w-0 bg-card border border-border rounded-xl py-3 px-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm"
             />
             <button
               onClick={() => void search(query)}
               disabled={isLoading || !query.trim()}
-              className="px-5 py-3 bg-primary text-primary-foreground rounded-xl font-heading font-semibold text-sm hover:bg-primary/90 disabled:opacity-40 disabled:cursor-not-allowed transition-all flex items-center gap-2"
+              className="shrink-0 px-4 sm:px-5 py-3 bg-primary text-primary-foreground rounded-xl font-heading font-semibold text-sm hover:bg-primary/90 disabled:opacity-40 disabled:cursor-not-allowed transition-all flex items-center gap-2"
             >
               {isLoading ? <Loader2 size={16} className="animate-spin" /> : <Search size={16} />}
-              Search
+              <span className="hidden sm:inline">Search</span>
             </button>
           </div>
 

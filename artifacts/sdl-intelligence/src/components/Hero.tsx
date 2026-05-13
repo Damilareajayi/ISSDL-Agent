@@ -31,11 +31,11 @@ function StatCounter({ value, suffix, label, triggered }: { value: number; suffi
     <div className="text-center">
       <div
         className="font-heading font-bold text-foreground tabular-nums"
-        style={{ fontSize: "clamp(26px, 3.5vw, 44px)", lineHeight: 1 }}
+        style={{ fontSize: "clamp(22px, 5.5vw, 44px)", lineHeight: 1 }}
       >
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="font-body text-muted-foreground text-xs uppercase tracking-widest mt-2 leading-tight">
+      <div className="font-body text-muted-foreground uppercase tracking-wider mt-2 leading-tight" style={{ fontSize: "clamp(9px, 2vw, 12px)" }}>
         {label}
       </div>
     </div>
@@ -209,10 +209,9 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 flex flex-col items-center text-center w-full px-4" style={{ marginTop: "-4vh" }}>
+      <div className="relative z-10 flex flex-col items-center text-center w-full px-5 sm:px-6" style={{ marginTop: "-4vh" }}>
         <p
-          className="font-body text-primary uppercase tracking-[0.25em] text-sm mb-8 font-medium"
-          style={{ letterSpacing: "0.3em" }}
+          className="font-body text-primary uppercase font-medium mb-6 sm:mb-8 tracking-[0.12em] sm:tracking-[0.22em] text-[10px] sm:text-xs md:text-sm"
           data-testid="text-hero-eyebrow"
         >
           The Global Knowledge Hub for Self-Directed Learning
@@ -220,8 +219,8 @@ export default function Hero() {
 
         <h1
           ref={titleRef}
-          className="font-heading font-bold text-foreground uppercase leading-none"
-          style={{ fontSize: "clamp(52px, 9.5vw, 148px)", letterSpacing: "-0.01em", lineHeight: 0.95 }}
+          className="font-heading font-bold text-foreground uppercase leading-none w-full"
+          style={{ fontSize: "clamp(36px, 11.5vw, 148px)", letterSpacing: "-0.01em", lineHeight: 0.95 }}
           data-testid="text-hero-title"
         >
           SDL
@@ -232,24 +231,22 @@ export default function Hero() {
         </h1>
 
         <div
-          className="mt-10 mb-8"
+          className="mt-8 sm:mt-10 mb-6 sm:mb-8"
           style={{
-            width: "clamp(60px, 8vw, 120px)", height: "1px",
+            width: "clamp(50px, 8vw, 120px)", height: "1px",
             background: "linear-gradient(to right, transparent, var(--primary), transparent)",
             opacity: 0.6,
           }}
         />
 
         <p
-          className="font-body text-muted-foreground max-w-xl text-xl leading-relaxed mb-12"
-          style={{ minHeight: "3.5rem" }}
+          className="font-body text-muted-foreground max-w-xl text-base sm:text-lg md:text-xl leading-relaxed mb-8 md:mb-12 px-2"
           data-testid="text-hero-subtitle"
         >
           {subtitleText}
           <span
             className="text-primary"
             style={{
-              opacity: typingDone ? 1 : 1,
               animation: typingDone ? "blink 1s step-end infinite" : "none",
               fontWeight: 300,
             }}
@@ -258,8 +255,8 @@ export default function Hero() {
 
         <button
           onClick={scrollToFeatures}
-          className="font-heading font-bold uppercase tracking-widest px-10 py-4 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
-          style={{ fontSize: "0.85rem", letterSpacing: "0.18em" }}
+          className="font-heading font-bold uppercase tracking-widest px-8 sm:px-10 py-3.5 sm:py-4 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl text-xs sm:text-sm"
+          style={{ letterSpacing: "0.15em" }}
           data-testid="button-start-exploring"
         >
           Start Exploring
@@ -268,9 +265,9 @@ export default function Hero() {
         {/* Animated stat counters */}
         <div
           ref={statsRef}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-8 w-full max-w-3xl"
+          className="mt-10 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-x-4 sm:gap-x-8 gap-y-6 sm:gap-y-8 w-full max-w-3xl"
           style={{
-            paddingTop: "1.5rem",
+            paddingTop: "1.25rem",
             borderTop: "1px solid rgba(var(--hero-particle), 0.15)",
           }}
         >
@@ -280,11 +277,14 @@ export default function Hero() {
         </div>
 
         <p
-          className="font-body text-muted-foreground text-xs mt-8 tracking-wider uppercase"
-          style={{ opacity: 0.55, letterSpacing: "0.15em" }}
+          className="font-body text-muted-foreground mt-6 sm:mt-8 uppercase text-center px-4 leading-relaxed"
+          style={{ opacity: 0.55, fontSize: "clamp(8px, 2vw, 11px)", letterSpacing: "0.1em" }}
           data-testid="text-hero-powered-by"
         >
-          RECAST Lab, Florida State University &nbsp;&middot;&nbsp; SDL Research Lab, North-West University
+          RECAST Lab, Florida State University
+          <span className="mx-2 hidden sm:inline">&middot;</span>
+          <br className="sm:hidden" />
+          SDL Research Lab, North-West University
         </p>
       </div>
 
