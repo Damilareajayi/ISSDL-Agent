@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
+// Particle accent colors — used for stat numbers
 const STATS = [
   { value: 600, suffix: "M+", label: "Papers Indexed",          color: "#FF5A45" },
   { value: 17,  suffix: "",   label: "Open-Access SDL Volumes", color: "#F59E0B" },
@@ -46,7 +47,6 @@ export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-  const mouseRef = useRef({ x: -9999, y: -9999 });
 
   const [statsVisible, setStatsVisible] = useState(false);
   const [subtitleText, setSubtitleText] = useState("");
@@ -81,14 +81,6 @@ export default function Hero() {
     return () => observer.disconnect();
   }, []);
 
-  // Mouse tracking (ref — no re-render)
-  useEffect(() => {
-    const onMove = (e: MouseEvent) => { mouseRef.current = { x: e.clientX, y: e.clientY }; };
-    const onLeave = () => { mouseRef.current = { x: -9999, y: -9999 }; };
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseleave", onLeave);
-    return () => { window.removeEventListener("mousemove", onMove); window.removeEventListener("mouseleave", onLeave); };
-  }, []);
 
   // Canvas particle animation
   useEffect(() => {
@@ -132,25 +124,11 @@ export default function Hero() {
       }
     };
 
-    const REPEL_RADIUS = 110;
-    const REPEL_STRENGTH = 5;
-
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const rgb = getParticleColor();
-      const { x: mx, y: my } = mouseRef.current;
 
       particles.forEach((p, i) => {
-        // Mouse repulsion
-        const mdx = p.x - mx;
-        const mdy = p.y - my;
-        const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-        if (mdist < REPEL_RADIUS && mdist > 0) {
-          const force = (1 - mdist / REPEL_RADIUS) * REPEL_STRENGTH;
-          p.x += (mdx / mdist) * force;
-          p.y += (mdy / mdist) * force;
-        }
-
         p.x += p.dx; p.y += p.dy; p.pulse += p.pulseSpeed;
         if (p.x < 0) p.x = canvas.width;
         if (p.x > canvas.width) p.x = 0;
@@ -205,14 +183,14 @@ export default function Hero() {
           top: "50%", left: "50%",
           transform: "translate(-50%, -60%)",
           width: "90vw", height: "55vh",
-          background: "radial-gradient(ellipse at center, rgba(255,90,69,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse at center, rgba(var(--hero-particle),0.08) 0%, transparent 70%)",
         }}
       />
 
       <div className="relative z-10 flex flex-col items-center text-center w-full px-5 sm:px-6" style={{ marginTop: "-4vh" }}>
         <p
           className="font-body uppercase font-medium mb-6 sm:mb-8 tracking-[0.12em] sm:tracking-[0.22em] text-[10px] sm:text-xs md:text-sm"
-          style={{ color: "#FF5A45" }}
+          style={{ color: "rgba(var(--hero-particle), 1)" }}
           data-testid="text-hero-eyebrow"
         >
           The Global Knowledge Hub for Self-Directed Learning
@@ -226,7 +204,7 @@ export default function Hero() {
         >
           SDL
           <br />
-          <span style={{ color: "#FF5A45", textShadow: "0 0 80px rgba(255,90,69,0.4)" }}>
+          <span style={{ color: "rgba(var(--hero-particle), 1)", textShadow: "0 0 80px rgba(var(--hero-particle), 0.4)" }}>
             INTELLIGENCE
           </span>
         </h1>
@@ -235,7 +213,7 @@ export default function Hero() {
           className="mt-8 sm:mt-10 mb-6 sm:mb-8"
           style={{
             width: "clamp(50px, 8vw, 120px)", height: "1px",
-            background: "linear-gradient(to right, transparent, #FF5A45, transparent)",
+            background: "linear-gradient(to right, transparent, rgba(var(--hero-particle),1), transparent)",
             opacity: 0.6,
           }}
         />
@@ -248,7 +226,7 @@ export default function Hero() {
           {subtitleText}
           <span
             style={{
-              color: "#FF5A45",
+              color: "rgba(var(--hero-particle), 1)",
               animation: typingDone ? "blink 1s step-end infinite" : "none",
               fontWeight: 300,
             }}
@@ -258,7 +236,7 @@ export default function Hero() {
         <button
           onClick={scrollToFeatures}
           className="font-heading font-bold uppercase tracking-widest px-8 sm:px-10 py-3.5 sm:py-4 rounded-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl text-xs sm:text-sm"
-          style={{ letterSpacing: "0.15em", backgroundColor: "#FF5A45", color: "#ffffff" }}
+          style={{ letterSpacing: "0.15em", backgroundColor: "rgba(var(--hero-particle),1)", color: "#ffffff" }}
           data-testid="button-start-exploring"
         >
           Start Exploring
@@ -268,7 +246,7 @@ export default function Hero() {
         <div
           ref={statsRef}
           className="mt-10 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-x-4 sm:gap-x-8 gap-y-6 sm:gap-y-8 w-full max-w-3xl"
-          style={{ paddingTop: "1.25rem", borderTop: "1px solid rgba(255,90,69,0.2)" }}
+          style={{ paddingTop: "1.25rem", borderTop: "1px solid rgba(var(--hero-particle),0.2)" }}
         >
           {STATS.map((stat) => (
             <StatCounter key={stat.label} {...stat} triggered={statsVisible} />

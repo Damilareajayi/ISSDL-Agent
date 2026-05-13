@@ -46,7 +46,8 @@ export default function Navbar() {
 
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div
-          className="font-heading font-bold text-sm tracking-wider text-primary cursor-pointer"
+          className="font-heading font-bold text-sm tracking-wider cursor-pointer transition-colors duration-300"
+          style={{ color: scrolled ? "var(--primary)" : "#f0f4ff" }}
           onClick={() => scrollTo("hero")}
           data-testid="link-logo"
         >
@@ -59,7 +60,8 @@ export default function Navbar() {
             <button
               key={id}
               onClick={() => scrollTo(id)}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium transition-colors duration-200"
+              style={{ color: scrolled ? "var(--muted-foreground)" : "rgba(240,244,255,0.75)" }}
               data-testid={`link-${id}`}
             >
               {label}
@@ -67,7 +69,11 @@ export default function Navbar() {
           ))}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+            className="p-2 rounded-full border transition-colors"
+            style={{
+              borderColor: scrolled ? "var(--border)" : "rgba(240,244,255,0.25)",
+              color: scrolled ? "var(--muted-foreground)" : "rgba(240,244,255,0.75)",
+            }}
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
@@ -78,7 +84,11 @@ export default function Navbar() {
         <div className="flex md:hidden items-center gap-3">
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+            className="p-2 rounded-full border transition-colors"
+            style={{
+              borderColor: scrolled ? "var(--border)" : "rgba(240,244,255,0.25)",
+              color: scrolled ? "var(--muted-foreground)" : "rgba(240,244,255,0.75)",
+            }}
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}

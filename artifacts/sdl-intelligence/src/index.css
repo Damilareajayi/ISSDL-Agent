@@ -44,13 +44,13 @@
   --foreground: #111827;
   --border: #e5e7eb;
   --input: #f9fafb;
-  --ring: #e63946;
+  --ring: #2563eb;
 
   --card: #f9fafb;
   --card-foreground: #111827;
   --card-border: #e5e7eb;
 
-  --primary: #e63946;
+  --primary: #2563eb;
   --primary-foreground: #ffffff;
 
   --secondary: #f3f4f6;
@@ -59,15 +59,15 @@
   --muted: #f3f4f6;
   --muted-foreground: #6b7280;
 
-  --accent: #e63946;
+  --accent: #2563eb;
   --accent-foreground: #ffffff;
 
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
 
-  /* Hero stays deep dark for dramatic contrast in both modes */
-  --hero-gradient: linear-gradient(135deg, #0f0c29 0%, #1a1035 50%, #0d1428 100%);
-  --hero-particle: 230, 57, 70;
+  /* Hero is always dark for dramatic contrast — but light/dark use distinct tones */
+  --hero-gradient: linear-gradient(135deg, #1a1050 0%, #0f2050 45%, #1a0a35 100%);
+  --hero-particle: 96, 165, 250;
   --hero-wave: #ffffff;
 
   --app-font-sans: 'Inter', sans-serif;
@@ -81,29 +81,29 @@
   --foreground: #f0f4ff;
   --border: #1e2040;
   --input: #1e2040;
-  --ring: #ff5a45;
+  --ring: #4f8ef7;
 
   --card: #0e1020;
   --card-foreground: #f0f4ff;
   --card-border: #1e2040;
 
-  --primary: #ff5a45;
-  --primary-foreground: #ffffff;
+  --primary: #4f8ef7;
+  --primary-foreground: #f0f4ff;
 
   --secondary: #1e2040;
   --secondary-foreground: #f0f4ff;
 
   --muted: #0e1020;
-  --muted-foreground: #8080aa;
+  --muted-foreground: #8a9bc2;
 
-  --accent: #ff5a45;
-  --accent-foreground: #ffffff;
+  --accent: #4f8ef7;
+  --accent-foreground: #f0f4ff;
 
   --destructive: #ef4444;
   --destructive-foreground: #f0f4ff;
 
-  --hero-gradient: linear-gradient(135deg, #05070f 0%, #10050a 50%, #050f1a 100%);
-  --hero-particle: 255, 90, 69;
+  --hero-gradient: linear-gradient(135deg, #05070f 0%, #0a0820 50%, #050f1e 100%);
+  --hero-particle: 79, 142, 247;
   --hero-wave: #05070f;
 }
 
@@ -129,6 +129,12 @@ html {
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+@keyframes ping-slow {
+  0% { transform: scale(1); opacity: 0.8; }
+  70% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1.6); opacity: 0; }
 }
 
 @keyframes pulse-glow {

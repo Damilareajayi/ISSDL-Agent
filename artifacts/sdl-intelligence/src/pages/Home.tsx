@@ -5,6 +5,7 @@ import ChatSection from "@/components/ChatSection";
 import ResearchSection from "@/components/ResearchSection";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
+import FloatingChat from "@/components/FloatingChat";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <About />
       </main>
       <Footer />
+      <FloatingChat />
     </div>
   );
 }

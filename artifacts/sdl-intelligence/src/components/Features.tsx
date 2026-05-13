@@ -235,15 +235,22 @@ function LabsPanel() {
   return (
     <div className="grid sm:grid-cols-2 gap-4">
       {LABS.map((lab, i) => (
-        <div key={i} className="bg-background border border-border rounded-xl p-4 space-y-2">
-          <div className="flex items-start justify-between gap-2">
-            <h4 className="font-heading font-semibold text-foreground text-sm leading-snug">{lab.name}</h4>
-            {lab.url && (
-              <a href={lab.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-foreground shrink-0 mt-0.5">
-                <ExternalLink size={13} />
+        <div key={i} className="bg-background border border-border rounded-xl p-4 space-y-2 hover:border-primary/40 transition-colors">
+          <h4 className="font-heading font-semibold text-sm leading-snug">
+            {lab.url ? (
+              <a
+                href={lab.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-primary transition-colors inline-flex items-center gap-1 group"
+              >
+                {lab.name}
+                <ExternalLink size={11} className="opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
               </a>
+            ) : (
+              <span className="text-foreground">{lab.name}</span>
             )}
-          </div>
+          </h4>
           <p className="text-xs text-primary font-medium">{lab.location}</p>
           <p className="text-xs text-muted-foreground"><span className="text-foreground/70">Lead: </span>{lab.lead}</p>
           <p className="text-xs text-muted-foreground leading-relaxed">{lab.focus}</p>
@@ -304,6 +311,7 @@ function PanelContent({ id }: { id: string }) {
 
 export default function Features() {
   const [activePanel, setActivePanel] = useState<string | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -323,7 +331,6 @@ export default function Features() {
     }
     const next = activePanel === feature.id ? null : feature.id;
     setActivePanel(next);
-    if (next) setTimeout(() => panelRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }), 80);
   }
 
   return (
@@ -343,29 +350,39 @@ export default function Features() {
               <button
                 key={feature.id}
                 onClick={() => handleClick(feature)}
-                className="text-left bg-card border rounded-2xl p-6 sm:p-8 fade-in-up transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                onMouseEnter={() => setHoveredId(feature.id)}
+                onMouseLeave={() => setHoveredId(null)}
+                className="text-left bg-card border rounded-2xl p-6 sm:p-8 fade-in-up transition-all duration-300 hover:-translate-y-2"
                 style={{
                   transitionDelay: `${index * 80}ms`,
-                  borderColor: isActive ? feature.color : undefined,
-                  boxShadow: isActive ? `0 8px 30px ${feature.color}25` : undefined,
+                  borderColor: (isActive || hoveredId === feature.id) ? feature.color : undefined,
+                  boxShadow: isActive
+                    ? `0 12px 40px ${feature.color}30`
+                    : hoveredId === feature.id
+                    ? `0 6px 24px ${feature.color}20`
+                    : undefined,
                 }}
                 data-testid={`card-feature-${index}`}
               >
                 {/* cchub-style rounded square icon badge */}
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 hover:scale-110"
-                  style={{ backgroundColor: `${feature.color}18`, color: feature.color }}
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300"
+                  style={{
+                    backgroundColor: `${feature.color}18`,
+                    color: feature.color,
+                    transform: hoveredId === feature.id ? "scale(1.12) rotate(-4deg)" : "scale(1)",
+                  }}
                 >
                   <feature.icon className="w-6 h-6" strokeWidth={1.8} />
                 </div>
                 <h3
-                  className="font-heading text-lg sm:text-xl font-bold mb-3 transition-colors"
-                  style={{ color: isActive ? feature.color : undefined }}
+                  className="font-heading text-lg sm:text-xl font-bold mb-3 transition-colors duration-200"
+                  style={{ color: (isActive || hoveredId === feature.id) ? feature.color : undefined }}
                 >
                   {feature.title}
                 </h3>
                 <p className="font-body text-muted-foreground leading-relaxed text-sm">{feature.description}</p>
-                <p className="text-xs mt-4 font-semibold" style={{ color: feature.color }}>
+                <p className="text-xs mt-4 font-semibold transition-opacity duration-200" style={{ color: feature.color }}>
                   {"action" in feature && feature.action === "scroll" ? "↓ Jump to section" : isActive ? "▲ Collapse" : "▼ Explore"}
                 </p>
               </button>
