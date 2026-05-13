@@ -232,7 +232,7 @@ export default function ChatSection() {
                   <p className="font-heading font-bold text-foreground text-sm leading-tight">SDL Research Assistant</p>
                   <div className="flex items-center gap-1 text-xs text-muted-foreground">
                     <Sparkles size={9} className="text-primary" />
-                    <span>Gemini 2.5 Flash · SDL knowledge base</span>
+                    <span>Gemini · SDL knowledge base</span>
                   </div>
                 </div>
               </div>
@@ -323,7 +323,7 @@ export default function ChatSection() {
                 </button>
               </div>
               <p className="text-[11px] text-muted-foreground/60 text-center mt-2">
-                Grounded in peer-reviewed SDL research · Powered by Gemini
+                Grounded in peer-reviewed SDL research · Powered by Gemini AI
               </p>
             </div>
           </div>
