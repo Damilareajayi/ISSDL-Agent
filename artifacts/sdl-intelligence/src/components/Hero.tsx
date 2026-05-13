@@ -1,9 +1,96 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const STATS = [
+  { value: 600, suffix: "M+", label: "Papers Indexed" },
+  { value: 17, suffix: "", label: "Open-Access SDL Volumes" },
+  { value: 40, suffix: "+", label: "Years of Research" },
+  { value: 5, suffix: "", label: "Global Research Labs" },
+];
+
+const FULL_SUBTITLE = "Explore research, frameworks, and global collaboration in Self-Directed Learning";
+
+function useCountUp(target: number, duration: number, triggered: boolean) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!triggered) return;
+    const startTime = performance.now();
+    const step = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [triggered, target, duration]);
+  return count;
+}
+
+function StatCounter({ value, suffix, label, triggered }: { value: number; suffix: string; label: string; triggered: boolean }) {
+  const count = useCountUp(value, 1800, triggered);
+  return (
+    <div className="text-center">
+      <div
+        className="font-heading font-bold text-foreground tabular-nums"
+        style={{ fontSize: "clamp(26px, 3.5vw, 44px)", lineHeight: 1 }}
+      >
+        {count.toLocaleString()}{suffix}
+      </div>
+      <div className="font-body text-muted-foreground text-xs uppercase tracking-widest mt-2 leading-tight">
+        {label}
+      </div>
+    </div>
+  );
+}
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const mouseRef = useRef({ x: -9999, y: -9999 });
 
+  const [statsVisible, setStatsVisible] = useState(false);
+  const [subtitleText, setSubtitleText] = useState("");
+  const [typingDone, setTypingDone] = useState(false);
+
+  // Typewriter effect with short initial delay
+  useEffect(() => {
+    let i = 0;
+    const delay = setTimeout(() => {
+      const timer = setInterval(() => {
+        i++;
+        setSubtitleText(FULL_SUBTITLE.slice(0, i));
+        if (i >= FULL_SUBTITLE.length) {
+          clearInterval(timer);
+          setTypingDone(true);
+        }
+      }, 28);
+      return () => clearInterval(timer);
+    }, 600);
+    return () => clearTimeout(delay);
+  }, []);
+
+  // Stats IntersectionObserver
+  useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStatsVisible(true); observer.disconnect(); } },
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Mouse tracking (ref — no re-render)
+  useEffect(() => {
+    const onMove = (e: MouseEvent) => { mouseRef.current = { x: e.clientX, y: e.clientY }; };
+    const onLeave = () => { mouseRef.current = { x: -9999, y: -9999 }; };
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseleave", onLeave);
+    return () => { window.removeEventListener("mousemove", onMove); window.removeEventListener("mouseleave", onLeave); };
+  }, []);
+
+  // Canvas particle animation
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -30,12 +117,12 @@ export default function Hero() {
 
     const initParticles = () => {
       particles = [];
-      const count = Math.min(140, Math.floor((canvas.width * canvas.height) / 10000));
+      const count = Math.min(160, Math.floor((canvas.width * canvas.height) / 8000));
       for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          radius: Math.random() * 1.8 + 0.4,
+          radius: Math.random() * 2 + 0.4,
           dx: (Math.random() - 0.5) * 0.35,
           dy: (Math.random() - 0.5) * 0.35,
           alpha: Math.random() * 0.55 + 0.1,
@@ -45,11 +132,25 @@ export default function Hero() {
       }
     };
 
+    const REPEL_RADIUS = 110;
+    const REPEL_STRENGTH = 5;
+
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const rgb = getParticleColor();
+      const { x: mx, y: my } = mouseRef.current;
 
       particles.forEach((p, i) => {
+        // Mouse repulsion
+        const mdx = p.x - mx;
+        const mdy = p.y - my;
+        const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+        if (mdist < REPEL_RADIUS && mdist > 0) {
+          const force = (1 - mdist / REPEL_RADIUS) * REPEL_STRENGTH;
+          p.x += (mdx / mdist) * force;
+          p.y += (mdy / mdist) * force;
+        }
+
         p.x += p.dx; p.y += p.dy; p.pulse += p.pulseSpeed;
         if (p.x < 0) p.x = canvas.width;
         if (p.x > canvas.width) p.x = 0;
@@ -139,18 +240,44 @@ export default function Hero() {
           }}
         />
 
-        <p className="font-body text-muted-foreground max-w-xl text-xl leading-relaxed mb-12" data-testid="text-hero-subtitle">
-          Explore research, frameworks, and global collaboration in Self-Directed Learning
+        <p
+          className="font-body text-muted-foreground max-w-xl text-xl leading-relaxed mb-12"
+          style={{ minHeight: "3.5rem" }}
+          data-testid="text-hero-subtitle"
+        >
+          {subtitleText}
+          <span
+            className="text-primary"
+            style={{
+              opacity: typingDone ? 1 : 1,
+              animation: typingDone ? "blink 1s step-end infinite" : "none",
+              fontWeight: 300,
+            }}
+          >|</span>
         </p>
 
         <button
           onClick={scrollToFeatures}
-          className="font-heading font-bold uppercase tracking-widest px-10 py-4 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5"
+          className="font-heading font-bold uppercase tracking-widest px-10 py-4 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
           style={{ fontSize: "0.85rem", letterSpacing: "0.18em" }}
           data-testid="button-start-exploring"
         >
           Start Exploring
         </button>
+
+        {/* Animated stat counters */}
+        <div
+          ref={statsRef}
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-8 w-full max-w-3xl"
+          style={{
+            paddingTop: "1.5rem",
+            borderTop: "1px solid rgba(var(--hero-particle), 0.15)",
+          }}
+        >
+          {STATS.map((stat) => (
+            <StatCounter key={stat.label} {...stat} triggered={statsVisible} />
+          ))}
+        </div>
 
         <p
           className="font-body text-muted-foreground text-xs mt-8 tracking-wider uppercase"
