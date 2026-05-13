@@ -39,31 +39,35 @@
 }
 
 :root {
-  /* Light / day theme — sky blue */
-  --background: #f0f8ff;
-  --foreground: #0c1a3a;
-  --border: #bae6fd;
-  --input: #e0f2fe;
-  --ring: #0284c7;
+  /* Light / day theme */
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --border: #e2e8f0;
+  --input: #f8fafc;
+  --ring: #2563eb;
 
-  --card: #ffffff;
-  --card-foreground: #0c1a3a;
-  --card-border: #bae6fd;
+  --card: #f8fafc;
+  --card-foreground: #0f172a;
+  --card-border: #e2e8f0;
 
-  --primary: #0284c7;
+  --primary: #2563eb;
   --primary-foreground: #ffffff;
 
-  --secondary: #e0f2fe;
-  --secondary-foreground: #0c4a6e;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #334155;
 
-  --muted: #e0f2fe;
-  --muted-foreground: #475569;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
 
-  --accent: #0284c7;
+  --accent: #2563eb;
   --accent-foreground: #ffffff;
 
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
+
+  --hero-gradient: linear-gradient(165deg, #f8fafc 0%, #eff6ff 55%, #dbeafe 100%);
+  --hero-particle: 37, 99, 235;
+  --hero-wave: #ffffff;
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: Georgia, serif;
@@ -96,6 +100,10 @@
 
   --destructive: #ef4444;
   --destructive-foreground: #f0f4ff;
+
+  --hero-gradient: linear-gradient(165deg, #05070f 0%, #0a1228 55%, #0d1b3e 100%);
+  --hero-particle: 79, 142, 247;
+  --hero-wave: #05070f;
 }
 
 @layer base {
