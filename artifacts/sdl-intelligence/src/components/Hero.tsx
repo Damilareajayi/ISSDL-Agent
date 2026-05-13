@@ -30,7 +30,7 @@ export default function Hero() {
 
     const initParticles = () => {
       particles = [];
-      const count = Math.min(70, Math.floor((canvas.width * canvas.height) / 20000));
+      const count = Math.min(140, Math.floor((canvas.width * canvas.height) / 10000));
       for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * canvas.width,
@@ -66,10 +66,10 @@ export default function Hero() {
           const p2 = particles[j];
           const ddx = p.x - p2.x, ddy = p.y - p2.y;
           const dist = Math.sqrt(ddx * ddx + ddy * ddy);
-          if (dist < 130) {
+          if (dist < 180) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(${rgb}, ${0.08 * (1 - dist / 130)})`;
-            ctx.lineWidth = 0.4;
+            ctx.strokeStyle = `rgba(${rgb}, ${0.12 * (1 - dist / 180)})`;
+            ctx.lineWidth = 0.5;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.stroke();
