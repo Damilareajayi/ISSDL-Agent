@@ -8,7 +8,7 @@ An AI-powered research platform for Self-Directed Learning (SDL), built for the 
 
 ## Features
 
-- **SDL Knowledge Chat** — Conversational AI grounded in the SDL knowledge base, citing frameworks, researchers, and publications. Powered by Google Gemini 2.5 Flash with function-calling for live research retrieval.
+- **SDL Knowledge Chat** — Conversational AI grounded in the SDL knowledge base, citing frameworks, researchers, and publications. Powered by Google Gemini with live research retrieval.
 - **Research Trends Explorer** — Searches OpenAlex, Semantic Scholar, and CORE (600M+ papers) in parallel and returns ranked, deduplicated results.
 - **Framework Navigator** — Interactive reference for the major SDL frameworks: Knowles, Garrison, Candy, Zimmerman, and the PRO model.
 - **Global Labs Map** — Profiles of leading SDL research centres: NWU SDL Unit, RECAST/FSU, ISSDL, FAU, and UTK.
@@ -23,7 +23,7 @@ An AI-powered research platform for Self-Directed Learning (SDL), built for the 
 |---|---|
 | Frontend | React 19, Vite 7, Tailwind CSS 4 |
 | Backend | Node.js, Express v5, TypeScript |
-| AI | Google Gemini 2.5 Flash (`@google/generative-ai`) |
+| AI | Google Gemini (`@google/generative-ai`) |
 | Research APIs | OpenAlex, Semantic Scholar, CORE |
 | Build | esbuild (API), Vite (frontend), pnpm workspaces |
 | Deployment | Docker, Google Cloud Run, Cloud Build |
@@ -35,10 +35,10 @@ An AI-powered research platform for Self-Directed Learning (SDL), built for the 
 ```
 ├── artifacts/
 │   ├── api-server/        # Express API — chat, research, health endpoints
-│   └── sdl-intelligence/  # React frontend
-├── lib/
-│   ├── api-zod/           # Shared Zod schemas
-│   └── db/                # Drizzle ORM schema
+│   ├── sdl-intelligence/  # React frontend
+│   └── mockup-sandbox/    # Internal UI prototyping sandbox (not deployed)
+├── lib/                   # Shared workspace libraries (schemas, API spec)
+├── scripts/               # Internal build/dev scripts
 ├── Dockerfile             # Multi-stage build (Debian builder → Alpine runtime)
 └── cloudbuild.yaml        # Google Cloud Build CI/CD pipeline
 ```
