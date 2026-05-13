@@ -65,10 +65,13 @@
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
 
-  /* Hero is always dark for dramatic contrast — but light/dark use distinct tones */
-  --hero-gradient: linear-gradient(135deg, #1a1050 0%, #0f2050 45%, #1a0a35 100%);
-  --hero-particle: 96, 165, 250;
+  /* Light hero — bright, airy, blue-tinted */
+  --hero-gradient: linear-gradient(150deg, #ffffff 0%, #eff6ff 45%, #dbeafe 100%);
+  --hero-particle: 37, 99, 235;
   --hero-wave: #ffffff;
+  --hero-text: #0f172a;
+  --hero-text-muted: rgba(15, 23, 42, 0.65);
+  --hero-text-subtle: rgba(15, 23, 42, 0.38);
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: Georgia, serif;
@@ -102,9 +105,13 @@
   --destructive: #ef4444;
   --destructive-foreground: #f0f4ff;
 
-  --hero-gradient: linear-gradient(135deg, #05070f 0%, #0a0820 50%, #050f1e 100%);
+  /* Dark hero — near-black with deep navy tones */
+  --hero-gradient: linear-gradient(150deg, #05070f 0%, #0a0820 50%, #050f1e 100%);
   --hero-particle: 79, 142, 247;
   --hero-wave: #05070f;
+  --hero-text: #f0f4ff;
+  --hero-text-muted: rgba(240, 244, 255, 0.72);
+  --hero-text-subtle: rgba(240, 244, 255, 0.38);
 }
 
 @layer base {

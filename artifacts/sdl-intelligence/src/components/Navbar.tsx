@@ -47,7 +47,7 @@ export default function Navbar() {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div
           className="font-heading font-bold text-sm tracking-wider cursor-pointer transition-colors duration-300"
-          style={{ color: scrolled ? "var(--primary)" : "#f0f4ff" }}
+          style={{ color: scrolled ? "var(--primary)" : "var(--hero-text)" }}
           onClick={() => scrollTo("hero")}
           data-testid="link-logo"
         >
@@ -61,7 +61,7 @@ export default function Navbar() {
               key={id}
               onClick={() => scrollTo(id)}
               className="text-sm font-medium transition-colors duration-200"
-              style={{ color: scrolled ? "var(--muted-foreground)" : "rgba(240,244,255,0.75)" }}
+              style={{ color: scrolled ? "var(--muted-foreground)" : "var(--hero-text-muted)" }}
               data-testid={`link-${id}`}
             >
               {label}
@@ -71,8 +71,8 @@ export default function Navbar() {
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="p-2 rounded-full border transition-colors"
             style={{
-              borderColor: scrolled ? "var(--border)" : "rgba(240,244,255,0.25)",
-              color: scrolled ? "var(--muted-foreground)" : "rgba(240,244,255,0.75)",
+              borderColor: scrolled ? "var(--border)" : "rgba(var(--hero-particle),0.3)",
+              color: scrolled ? "var(--muted-foreground)" : "var(--hero-text-muted)",
             }}
             aria-label="Toggle theme"
           >
@@ -86,8 +86,8 @@ export default function Navbar() {
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="p-2 rounded-full border transition-colors"
             style={{
-              borderColor: scrolled ? "var(--border)" : "rgba(240,244,255,0.25)",
-              color: scrolled ? "var(--muted-foreground)" : "rgba(240,244,255,0.75)",
+              borderColor: scrolled ? "var(--border)" : "rgba(var(--hero-particle),0.3)",
+              color: scrolled ? "var(--muted-foreground)" : "var(--hero-text-muted)",
             }}
             aria-label="Toggle theme"
           >
@@ -95,7 +95,11 @@ export default function Navbar() {
           </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="p-2 rounded-lg border border-border text-muted-foreground hover:text-foreground transition-colors"
+            className="p-2 rounded-lg border transition-colors"
+            style={{
+              borderColor: scrolled ? "var(--border)" : "rgba(var(--hero-particle),0.3)",
+              color: scrolled ? "var(--muted-foreground)" : "var(--hero-text-muted)",
+            }}
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}

@@ -36,7 +36,7 @@ function StatCounter({ value, suffix, label, color, triggered }: { value: number
       >
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="font-body uppercase tracking-wider mt-2 leading-tight" style={{ fontSize: "clamp(9px, 2vw, 12px)", color: "rgba(240,244,255,0.6)" }}>
+      <div className="font-body uppercase tracking-wider mt-2 leading-tight" style={{ fontSize: "clamp(9px, 2vw, 12px)", color: "var(--hero-text-subtle)" }}>
         {label}
       </div>
     </div>
@@ -199,7 +199,7 @@ export default function Hero() {
         <h1
           ref={titleRef}
           className="font-heading font-bold uppercase leading-none w-full"
-          style={{ fontSize: "clamp(36px, 11.5vw, 148px)", letterSpacing: "-0.01em", lineHeight: 0.95, color: "#f0f4ff" }}
+          style={{ fontSize: "clamp(36px, 11.5vw, 148px)", letterSpacing: "-0.01em", lineHeight: 0.95, color: "var(--hero-text)" }}
           data-testid="text-hero-title"
         >
           SDL
@@ -220,7 +220,7 @@ export default function Hero() {
 
         <p
           className="font-body max-w-xl text-base sm:text-lg md:text-xl leading-relaxed mb-8 md:mb-12 px-2"
-          style={{ color: "rgba(240,244,255,0.75)" }}
+          style={{ color: "var(--hero-text-muted)" }}
           data-testid="text-hero-subtitle"
         >
           {subtitleText}
@@ -236,7 +236,7 @@ export default function Hero() {
         <button
           onClick={scrollToFeatures}
           className="font-heading font-bold uppercase tracking-widest px-8 sm:px-10 py-3.5 sm:py-4 rounded-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl text-xs sm:text-sm"
-          style={{ letterSpacing: "0.15em", backgroundColor: "rgba(var(--hero-particle),1)", color: "#ffffff" }}
+          style={{ letterSpacing: "0.15em", backgroundColor: "rgba(var(--hero-particle),1)", color: "#fff" }}
           data-testid="button-start-exploring"
         >
           Start Exploring
@@ -255,7 +255,7 @@ export default function Hero() {
 
         <p
           className="font-body mt-6 sm:mt-8 uppercase text-center px-4 leading-relaxed"
-          style={{ color: "rgba(240,244,255,0.4)", fontSize: "clamp(8px, 2vw, 11px)", letterSpacing: "0.1em" }}
+          style={{ color: "var(--hero-text-subtle)", fontSize: "clamp(8px, 2vw, 11px)", letterSpacing: "0.1em" }}
           data-testid="text-hero-powered-by"
         >
           RECAST Lab, Florida State University
